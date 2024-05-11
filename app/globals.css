@@ -3,31 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --swiper-theme-color: #f02b2f !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.swiper-button-prev, .swiper-button-next{
+  color: #f02b2f !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Custom bullet size */
+.swiper-pagination.swiper-pagination-bullets {
+  /* Example of custom bullet size */
+  width: 15px;
+  height: 15px;
+
+}
+
+/* Custom bullet styles */
+.swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  /* Example of custom bullet size */
+  width: 15px;
+  height: 15px;
+  /* Example of custom bullet color */
+  background-color: red;
+}
+
+.backgroundGradient{
+  background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(247, 30, 30) 100.3%);
 }
