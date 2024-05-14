@@ -5,7 +5,7 @@ import React from "react";
 
 const Continental = () => {
   return (
-    <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2">
+    <div className="grid w-full min-h-screen grid-cols-1 lg:grid-cols-2">
       <div className="">
         <div className="relative max-w-sm md:max-w-md h-96  lg:h-[500px]">
           <Image
@@ -17,11 +17,11 @@ const Continental = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-8 text-start items-center justify-center w-full h-full">
+      <div className="flex flex-col items-center justify-center w-full h-full gap-8 text-start">
         {
             continental.map((value, index)=>{
                 return(
-                    <div key={value.id} className="w-full h-full px-10 py-7 rounded-md bg-bgColor2" >
+                    <div key={value.id} className="w-full h-full px-10 rounded-md py-7 bg-bgColor2" >
                             <h2 className="text-2xl font-semibold ">{value.name} </h2>
                             <p>{value.desc} </p>
                             <h4 className="text-xl font-semibold text-textColor">{value.time} </h4>

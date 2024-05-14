@@ -36,7 +36,7 @@ export default function CustomerReview() {
             slidesPerView: 2,
           },
         }}
-        className="mySwiper bg-bgColor2 mt-8"
+        className="mt-8 mySwiper bg-bgColor2"
       >
         {avatar.map((value) => {
           return (
@@ -44,14 +44,14 @@ export default function CustomerReview() {
               <Image
                 src={value.img}
                 alt={value.name}
-                className="w-28 h-28 m-auto border-4 border-textColor rounded-full"
+                className="m-auto border-4 rounded-full w-28 h-28 border-textColor"
                 width={300}
                 height={300}
               />
               <h2 className="text-xl font-semibold text-textColor">
                 {value.name}{" "}
               </h2>
-              <p className="text-slate-500 px-1 md:px-5 lg:px-12">
+              <p className="px-1 text-slate-500 md:px-5 lg:px-12">
                 {value.desc}{" "}
               </p>
             </SwiperSlide>

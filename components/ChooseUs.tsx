@@ -10,7 +10,7 @@ const ChooseUs = () => {
     textCss: "w-full",
   };
   return (
-    <div className=" grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen gap-4  py-10 ">
+    <div className="grid w-full min-h-screen grid-cols-1 gap-4 py-10 lg:grid-cols-2">
       <div className="relative w-full h-full ">
         <Image
           src={"/choose.png"}
@@ -27,7 +27,7 @@ const ChooseUs = () => {
             return (
               <div
                 key={value.id}
-                className="flex flex-col md:flex-row gap-10 text-start h-full mt-8 "
+                className="flex flex-col h-full gap-10 mt-8 md:flex-row text-start "
               >
                 <div className="">
                   <Image
@@ -35,7 +35,7 @@ const ChooseUs = () => {
                     alt={value.name}
                     width={200}
                     height={200}
-                    className="object-fill bg-white size-50 p-5 rounded-full"
+                    className="object-fill p-5 bg-white rounded-full size-50"
                   />
                 </div>
                 <div className="">

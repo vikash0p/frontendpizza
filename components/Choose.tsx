@@ -8,15 +8,15 @@ const Choose = () => {
         return (
           <div
             key={value.id}
-            className="flex flex-col gap-3 items-center justify-center text-center group"
+            className="flex flex-col items-center justify-center gap-3 text-center group"
           >
-            <div className="relative  w-32  h-36">
+            <div className="relative w-32 h-36">
               <Image
                 src={value.img}
                 alt={value.desc}
                 sizes="128px"
                 fill
-                className=" object-cover object-center group-hover:translate-x-5 transition-all duration-500"
+                className="object-cover object-center transition-all duration-500 group-hover:translate-x-5"
               />
             </div>
             <h2 className="text-2xl text-black group-hover:text-textColor">

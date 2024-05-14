@@ -3,14 +3,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-bgColor border-t-2 border-textColor pt-5 ">
-      <div className="mx-auto w-full max-w-screen-xl">
+    <footer className="pt-5 border-t-2 bg-bgColor border-textColor ">
+      <div className="w-full max-w-screen-xl mx-auto">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
           <div>
             <h2 className="mb-6 text-sm font-semibold text-black uppercase ">
               Company
             </h2>
-            <ul className="text-slate-700 font-medium">
+            <ul className="font-medium text-slate-700">
               <li className="mb-4">
                 <a href="#" className=" hover:underline">
                   About
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="mb-6 text-sm font-semibold text-black">Legal</h2>
-            <ul className="text-slate-700 font-medium">
+            <ul className="font-medium text-slate-700">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   Privacy Policy
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="mb-6 text-sm font-semibold text-black">Download</h2>
-            <ul className="text-slate-700 font-medium">
+            <ul className="font-medium text-slate-700">
               <li className="mb-4">
                 <a href="#" className="hover:underline">
                   iOS
@@ -110,7 +110,7 @@ const Footer = () => {
           <span className="text-sm text-black sm:text-center">
             © 2024 <a href="/">HotPizza</a>. All Rights Reserved.
           </span>
-          <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+          <div className="flex mt-4 space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
             <a
               href="#"
               className="text-black"

@@ -86,7 +86,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto shadow-2xl p-4 mt-20 border-textColor border-2 ">
+    <div className="max-w-md p-4 mx-auto mt-20 border-2 shadow-2xl border-textColor ">
       <form onSubmit={handleSubmit} className="space-y-6 text-black">
         <div>
           <label
@@ -101,7 +101,7 @@ const RegisterForm = () => {
             type="text"
             value={formData.fullName}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3  block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-3 focus:ring-textColor focus:border-textCoring-textColor"
             autoComplete="off"
             placeholder="John Doe"
           />
@@ -119,7 +119,7 @@ const RegisterForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-3 focus:ring-textColor focus:border-textCoring-textColor"
             autoComplete="off"
             placeholder="Enter your email address"
           />
@@ -137,7 +137,7 @@ const RegisterForm = () => {
             type="password"
             value={formData.password}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-3 focus:ring-textColor focus:border-textCoring-textColor"
             autoComplete="off"
             placeholder="Enter your password"
           />
@@ -154,7 +154,7 @@ const RegisterForm = () => {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-3 focus:ring-textColor focus:border-textCoring-textColor"
             autoComplete="off"
 
           >
@@ -167,7 +167,7 @@ const RegisterForm = () => {
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 ps-3 px-4 border border-transparent rounded-md shadow-sm  bg-textColor text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor"
+            className="flex justify-center w-full px-4 py-2 text-white border border-transparent rounded-md shadow-sm ps-3 bg-textColor hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor"
           >
             Register
           </button>

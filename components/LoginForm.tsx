@@ -77,7 +77,7 @@ const LoginForm = () => {
     <div className="max-w-md mx-auto">
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 text-black border-2 border-textColor px-8 py-12"
+        className="px-8 py-12 space-y-6 text-black border-2 border-textColor"
       >
         <div>
           <label
@@ -92,7 +92,7 @@ const LoginForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 py-2 ps-4  block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-4 focus:ring-textColor focus:border-textColor"
             autoComplete="off"
             placeholder="Enter your email"
           />
@@ -110,16 +110,16 @@ const LoginForm = () => {
             type="password"
             value={formData.password}
             onChange={handleChange}
-            className="mt-1 py-2 ps-4  block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
+            className="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm ps-4 focus:ring-textColor focus:border-textColor"
             autoComplete="off"
             placeholder="Enter your password"
           />
         </div>
-        {error && <p className="text-red-500 py-3">{error}</p>}
+        {error && <p className="py-3 text-red-500">{error}</p>}
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-textColor hover:bg-textColor focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor"
+            className="flex justify-center w-full px-4 py-2 text-white border border-transparent rounded-md shadow-sm bg-textColor hover:bg-textColor focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor"
           >
             Login
           </button>

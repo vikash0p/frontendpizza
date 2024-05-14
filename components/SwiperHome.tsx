@@ -25,7 +25,7 @@ export default function SwiperHome({ pizzaData }: PizzaDataProps) {
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper max-w-7xl m-auto "
+        className="m-auto mySwiper max-w-7xl "
         spaceBetween={10}
         pagination={{
           dynamicBullets: true,
@@ -57,22 +57,22 @@ export default function SwiperHome({ pizzaData }: PizzaDataProps) {
       >
         <div className="">
           {pizzaData === undefined && !pizzaData ? (
-            <div className="w-full min-h-screen flex flex-col justify-center items-center ">
-              <h1 className="text-4xl text-textColor font-semibold">
+            <div className="flex flex-col items-center justify-center w-full min-h-screen ">
+              <h1 className="text-4xl font-semibold text-textColor">
                 No Pizza found !
               </h1>
             </div>
           ) : (
-            <div className="  ">
+            <div className="">
               {pizzaData.map((value) => {
                 return (
                   <SwiperSlide
                     key={value._id}
-                    className="  max-w-sm h-full border-2  flex flex-col justify-center items-center"
+                    className="flex flex-col items-center justify-center h-full max-w-sm border-2 "
                   >
                     <Suspense
                       fallback={
-                        <div className="w-full h-full text-center flex flex-col justify-center items-center text-textColor text-2xl ">
+                        <div className="flex flex-col items-center justify-center w-full h-full text-2xl text-center text-textColor ">
                           Loading...
                         </div>
                       }

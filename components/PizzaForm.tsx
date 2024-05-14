@@ -107,7 +107,7 @@ const PizzaForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lg px-2 py-5 mt-2 rounded-sm mb-3 mx-auto text-black border-2 border-textColor ">
+    <div className="max-w-lg px-2 py-5 mx-auto mt-2 mb-3 text-black border-2 rounded-sm border-textColor ">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-black">
@@ -119,7 +119,7 @@ const PizzaForm: React.FC = () => {
             name="name"
             value={pizza.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
         </div>
         <div>
@@ -132,7 +132,7 @@ const PizzaForm: React.FC = () => {
             name="description"
             value={pizza.description}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
         </div>
         <div>
@@ -145,7 +145,7 @@ const PizzaForm: React.FC = () => {
             name="category"
             value={pizza.category}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
         </div>
         <div>
@@ -158,19 +158,19 @@ const PizzaForm: React.FC = () => {
             name="image"
             value={pizza.image}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
           />
         </div>
         <div>
           <label className="block text-">Variants & Prices</label>
           {pizza.variants.map((variant, index) => (
-            <div key={index} className="flex space-x-4 py-2">
+            <div key={index} className="flex py-2 space-x-4">
               <input
                 type="text"
                 value={variant}
                 onChange={(e) => handleVariantChange(index, e)}
                 placeholder="Variant"
-                className="border border-gray-300 rounded-md px-4 py-2"
+                className="px-4 py-2 border border-gray-300 rounded-md"
               />
               <input
                 type="number"
@@ -179,14 +179,14 @@ const PizzaForm: React.FC = () => {
                 placeholder="Price"
                 min="0"
                 step="0.01"
-                className="border border-gray-300 rounded-md px-4 py-2"
+                className="px-4 py-2 border border-gray-300 rounded-md"
               />
             </div>
           ))}
           <button
             type="button"
             onClick={handleAddVariant}
-            className="mt-2 bg-textColor text-white px-4 py-2 rounded-md hover:bg-textColor"
+            className="px-4 py-2 mt-2 text-white rounded-md bg-textColor hover:bg-textColor"
           >
             Add Variant
           </button>
@@ -194,7 +194,7 @@ const PizzaForm: React.FC = () => {
         <div>
           <button
             type="submit"
-            className="bg-textColor text-white px-4 py-2 rounded-md hover:bg-textColor"
+            className="px-4 py-2 text-white rounded-md bg-textColor hover:bg-textColor"
           >
             Add Pizza
           </button>

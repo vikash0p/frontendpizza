@@ -39,7 +39,7 @@ const VariantPriceForm: React.FC = () => {
     console.log(variantPrices);
     try {
       const res = await axios.post("http://localhost:5000/pizza/create",{
-        
+
       });
 
     } catch (error) {
@@ -59,7 +59,7 @@ const VariantPriceForm: React.FC = () => {
                 value={variantPrice.variant}
                 onChange={(e) => handleVariantChange(index, e)}
                 placeholder="Variant"
-                className="border border-gray-300 rounded-md px-4 py-2"
+                className="px-4 py-2 border border-gray-300 rounded-md"
               />
               <input
                 type="number"
@@ -68,14 +68,14 @@ const VariantPriceForm: React.FC = () => {
                 placeholder="Price"
                 min="0"
                 step="0.01"
-                className="border border-gray-300 rounded-md px-4 py-2"
+                className="px-4 py-2 border border-gray-300 rounded-md"
               />
             </div>
           ))}
           <button
             type="button"
             onClick={handleAddVariant}
-            className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            className="px-4 py-2 mt-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
           >
             Add Variant
           </button>
@@ -83,7 +83,7 @@ const VariantPriceForm: React.FC = () => {
         <div>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600"
           >
             Submit
           </button>

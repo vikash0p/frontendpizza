@@ -22,7 +22,7 @@ const SingleData: React.FC<singleDataProps> = ({ data }) => {
   };
 
   return (
-    <div className="max-w-6xl m-auto min-h-screen grid grid-cols-1 lg:grid-cols-2  items-center">
+    <div className="grid items-center max-w-6xl min-h-screen grid-cols-1 m-auto lg:grid-cols-2">
       <div className="">
         <div className="relative  max-w-sm md:max-w-md  h-96 lg:h-[500px]">
           <Image
@@ -31,16 +31,16 @@ const SingleData: React.FC<singleDataProps> = ({ data }) => {
             fill
             priority
             sizes=""
-            className="object-cover w-96 h-96 object-center rounded-lg"
+            className="object-cover object-center rounded-lg w-96 h-96"
           />
         </div>
       </div>
       <div className="flex flex-col self-start gap-4 mt-12">
-        <h2 className="text-2xl text-textColor font-bold">{data.name} </h2>
+        <h2 className="text-2xl font-bold text-textColor">{data.name} </h2>
         <p className="text-xl ">{data.description} </p>
         <h5 className="text-2xl font-semibold">
           Category :{" "}
-          <span className="text-textColor uppercase">{data.category}</span>
+          <span className="uppercase text-textColor">{data.category}</span>
         </h5>
         <h5 className="text-2xl">
           Price : <span className="text-textColor"> &#8377;{price}</span>{" "}
@@ -63,7 +63,7 @@ const SingleData: React.FC<singleDataProps> = ({ data }) => {
         <div className="py-5">
           <button
             type="button"
-            className="px-7 py-2 bg-textColor text-white rounded-sm hover:bg-red-900"
+            className="py-2 text-white rounded-sm px-7 bg-textColor hover:bg-red-900"
             onClick={() => {
               ToastSuccess(`${data.name} added to cart`);
               dispatch(

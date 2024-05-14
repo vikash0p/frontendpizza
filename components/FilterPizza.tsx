@@ -72,7 +72,7 @@ const FilterHandler=(value:string,index:number)=>{
       <div className="basis-[85%]">
         <Suspense
           fallback={
-            <div className="w-full min-h-screen flex flex-col justify-center items-center text-textColor text-2xl" >
+            <div className="flex flex-col items-center justify-center w-full min-h-screen text-2xl text-textColor" >
               Loading...
             </div>
           }

@@ -11,10 +11,10 @@ const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
   return (
     <>
       <Link href={`/pizza/${value._id}`}>
-        <div className=" rounded-lg text-black   bg-bgColor2 ">
-          <div className="relative overflow-x-hidden max-w-sm h-48">
+        <div className="text-black rounded-lg bg-bgColor2">
+          <div className="relative h-48 max-w-sm overflow-x-hidden">
             <Image
-              className="rounded-t-lg object-cover object-center "
+              className="object-cover object-center rounded-t-lg "
               src={value.image}
               alt={value._id}
               fill
@@ -30,7 +30,7 @@ const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
               {value.description.substring(0, 50)}...
             </p>
             <h6 className="text-xl font-bold "> &#8377;{value.price[0]} /- </h6>
-            <h1 className="text-xl text-textColor font-semibold uppercase">
+            <h1 className="text-xl font-semibold uppercase text-textColor">
               {value.category}{" "}
             </h1>
           </div>

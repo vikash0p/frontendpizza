@@ -16,13 +16,13 @@ const MenuItem: React.FC<menuItemProps> = ({ pizzaData }) => {
   return (
     <div>
       <Heading data={headingData} />
-      <div className="grid grid-cols-1 w-full h-full lg:grid-cols-2 gap-5 pt-8">
+      <div className="grid w-full h-full grid-cols-1 gap-5 pt-8 lg:grid-cols-2">
         {pizzaData?.slice(0, 12).map((value) => {
           return (
             <Link href={`/pizza/${value._id}`} key={value._id}>
-              <div className="flex flex-col items-center bg-bgColor2  rounded-lg  md:flex-row md:max-w-xl p-4 ">
+              <div className="flex flex-col items-center p-4 rounded-lg bg-bgColor2 md:flex-row md:max-w-xl ">
                 <Image
-                  className="object-cover object-center w-32 h-32  rounded-lg"
+                  className="object-cover object-center w-32 h-32 rounded-lg"
                   width={400}
                   height={400}
                   src={value.image}
@@ -47,7 +47,7 @@ const MenuItem: React.FC<menuItemProps> = ({ pizzaData }) => {
         })}
       </div>
       <div className="my-10">
-        <Link href={'/pizza'} className="bg-textColor  px-10 py-2 rounded-md text-xl text-white ">All Menu</Link>
+        <Link href={'/pizza'} className="px-10 py-2 text-xl text-white rounded-md bg-textColor ">All Menu</Link>
       </div>
     </div>
   );
