@@ -61,7 +61,7 @@ const RegisterForm = () => {
     try {
       formDataSchema.parse(formData);
       // console.log(formData);
-      const res = await axios.post("http://localhost:5000/auth/register", {
+      const res = await axios.post("https://backendpizza.vercel.app/auth/register", {
         fullName: formData.fullName,
         email: formData.email,
         password: formData.password,

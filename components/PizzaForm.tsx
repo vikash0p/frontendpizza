@@ -68,7 +68,7 @@ const PizzaForm: React.FC = () => {
     e.preventDefault();
     // console.log(pizza);
     try {
-      const res = await axios.post("http://localhost:5000/pizza/create", {
+      const res = await axios.post("https://backendpizza.vercel.app/pizza/create", {
         name: pizza.name,
         description: pizza.description,
         category: pizza.category,

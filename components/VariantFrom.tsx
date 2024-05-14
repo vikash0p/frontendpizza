@@ -38,7 +38,7 @@ const VariantPriceForm: React.FC = () => {
     event.preventDefault();
     console.log(variantPrices);
     try {
-      const res = await axios.post("http://localhost:5000/pizza/create",{
+      const res = await axios.post("https://backendpizza.vercel.app/pizza/create",{
 
       });
 
