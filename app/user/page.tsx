@@ -7,7 +7,7 @@ const User = () => {
   console.log("🚀 ~ file: page.tsx:7 ~ user:", user);
   useEffect(() => {
     getUserData();
-  }, []);
+  }, [getUserData]);
 
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center text-center text-black">
