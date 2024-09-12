@@ -1,169 +1,148 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { BiCart, BiMenu, BiSearch, BiUser } from "react-icons/bi";
-import { useGlobalAuth } from "@/context/AuthProvider";
+import { BiSearch, BiUser } from "react-icons/bi";
+import { IoCartSharp } from "react-icons/io5";
 import { useAppSelector } from "@/Redux-toolkit/hooks";
+import Image from "next/image";
+import { SideBar } from "./SideBar";
+import { navLinks } from "@/utils/data";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-      const pizza = useAppSelector((state) => state.cart.cart);
+    const pathname = usePathname();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const { user, logoutUser } = useGlobalAuth();
-  console.log("🚀 ~ file: Navbar.tsx:13 ~ user:", user?.user);
-  const admin=user?.user.role==='admin'
+  const pizza = useAppSelector((state) => state.cart.cart);
   const [isSearch, setIsSearch] = useState<boolean>(false);
 
   const toggleSearch = () => {
     setIsSearch((prev) => !prev);
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+
 
   return (
-    <nav className="bg-bgColor text-black  border-b-2 border-textColor sticky top-0 left-0 right-0 z-50 ">
+    <nav className="bg-bgColor text-black  sticky top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0">
-            <h2 className="text-3xl font-bold text-textColor">HotPizza</h2>
+          {/* Logo */}
+          <div className="flex-shrink-0 hidden lg:block ">
+            <Image
+              src={"/logo.png"}
+              alt="logo image "
+              width={500}
+              height={250}
+              className=" w-64 h-full mix-blend-darken "
+            />
           </div>
-          <div className="hidden md:flex md:space-x-4 ">
-            {user ? (
-              <div>
-                {isSearch ? (
-                  <div>
-                    <input
-                      type="search"
-                      name="search"
-                      id="search"
-                      className="w-96 h-9 bg-bgColor2 border border-gray-800 rounded-sm px-4 outline-none focus:border-red-700"
-                      placeholder="Search product"
-                    />
-                  </div>
-                ) : (
-                  <div>
-                    <div className="flex flex-col lg:flex-row gap-4 items-center">
-                      <Link href="/" className="text-lg font-semibold">
-                        Home
-                      </Link>
 
-                      <Link href="/pizza" className="text-lg font-semibold">
-                        pizza
-                      </Link>
-                     {
-                        admin &&(
-                          <Link href="/createPizza" className="text-lg font-semibold">
-                        create Pizza
-                      </Link>
+          <div className="lg:hidden w-full flex  justify-between items-center">
+            <div className="">
+              <SideBar />
+            </div>
+            <div className="">
+              <label htmlFor="search" className="sr-only">
+                Search Product
+              </label>
+              <input
+                type="search"
+                name="search"
+                id="search"
+                aria-label="Search product"
+                className="w-full h-9 md:min-w-96 bg-bgColor2 border border-red-500 rounded-sm px-4 outline-none focus:border-red-700"
+                placeholder="Search product"
+              />
+            </div>
+            <div className="">
+              <div className="relative me-4">
+                <Link
+                  href="/cart"
+                  className="text-lg font-semibold"
+                  aria-label="Shopping Cart"
+                >
+                  <IoCartSharp size={26} />
+                  <span className="absolute -top-2 left-5 w-4 h-4 bg-red-500 text-white flex items-center justify-center rounded-full text-xs">
+                    {pizza.length}
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+          {/* Navigation links for large screens */}
+          <div
+            className={`hidden lg:flex md:space-x-4 overflow-hidden transition-all duration-400 ease-linear ${
+              isSearch === true ? " opacity-0 hidden" : " opacity-100 block"
+            }`}
+          >
+            <div className="flex flex-col lg:flex-row gap-4 items-center">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-xl ${pathname=== link.href ? "text-textColor":"" }`}
+                  aria-label={link.label}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-                        )
-                     }
-                      <button
-                        type="button"
-                        className="px-6 py-2 bg-textColor text-white"
-                        onClick={() => logoutUser()}
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  </div>
-                )}
+          {/* Icons (Search, User, Cart) */}
+          <div className="hidden lg:flex md:items-center">
+            <div className="flex flex-row gap-2 items-center">
+              {/* Search bar with transition */}
+              <div
+                className={`${
+                  isSearch ? "w-96 opacity-100" : "max-w-0 opacity-0"
+                } overflow-hidden transition-all duration-400 ease-linear`}
+              >
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  aria-label="Search product"
+                  className="w-full h-9 bg-bgColor2 border border-gray-800 rounded-sm px-4 outline-none focus:border-red-700"
+                  placeholder="Search product"
+                />
               </div>
-            ) : (
-              <div className="flex flex-col md:flex-row gap-4 items-center">
-                <Link href="/login">
-                  <span className="text-lg font-semibold">Login</span>
-                </Link>
-                <Link href="/register">
-                  <span className="text-lg font-semibold">Register</span>
+
+              {/* Search button */}
+              <button
+                type="button"
+                onClick={toggleSearch}
+                aria-label={isSearch ? "Close search" : "Open search"}
+                className="focus:outline-none"
+              >
+                <BiSearch size={26} className="mr-4" />
+              </button>
+
+              {/* User profile link */}
+              <Link
+                href="/user"
+                className="text-lg font-semibold"
+                aria-label="User Profile"
+              >
+                <BiUser size={26} className="mr-4" />
+              </Link>
+
+              {/* Cart link */}
+              <div className="relative me-4">
+                <Link
+                  href="/cart"
+                  className="text-lg font-semibold"
+                  aria-label="Shopping Cart"
+                >
+                  <IoCartSharp size={26} />
+                  <span className="absolute -top-2 left-5 w-4 h-4 bg-red-500 text-white flex items-center justify-center rounded-full text-xs">
+                    {pizza.length}
+                  </span>
                 </Link>
               </div>
-            )}
-          </div>
-          <div className="flex md:hidden">
-            <button className="text-3xl text-textColor" onClick={toggleMenu}>
-              <BiMenu />
-            </button>
-          </div>
-          <div className="hidden md:flex md:items-center">
-            {user ? (
-              <div className="flex flex-row gap-2 items-center">
-                <button type="button" onClick={toggleSearch}>
-                  <BiSearch size={25} className="mr-4" />
-                </button>
-                <Link href="/user" className="text-lg font-semibold">
-                  <BiUser size={25} className="mr-4" />
-                </Link>
-                <div className="relative me-4">
-                  <Link href="/cart" className="text-lg font-semibold">
-                    <BiCart size={25} />
-                    <span className="absolute top-0 left-6 w-5 h-5 bg-gray-800 text-white flex items-center justify-center rounded-full text-sm">
-                      {pizza.length}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            ) : (
-              <div></div>
-            )}
+            </div>
           </div>
         </div>
       </div>
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden">
-          {user ? (
-            <div className="flex flex-col md:flex-row gap-4 items-start ps-5 pb-3">
-              <Link href="/" className="text-lg font-semibold">
-                Home
-              </Link>
-              <Link href="/user" className="text-lg font-semibold">
-                User
-              </Link>
-              <Link href="/pizza" className="text-lg font-semibold">
-                pizza
-              </Link>
-              <Link href="/createPizza" className="text-lg font-semibold">
-                Create Pizza
-              </Link>
-              <button
-                type="button"
-                className="px-6 py-2 bg-textColor text-white"
-                onClick={() => logoutUser()}
-              >
-                Logout
-              </button>
-              <div className="flex flex-row gap-2 items-center">
-                {/* <button type="button" onClick={toggleSearch}>
-                  <BiSearch size={25} className="mr-4" />
-                </button> */}
-                <Link href="/user" className="text-lg font-semibold">
-                  <BiUser size={25} className="mr-4" />
-                </Link>
-                <div className="relative me-4">
-                  <Link href="/cart" className="text-lg font-semibold">
-                    <BiCart size={25} />
-                    <span className="absolute top-0 left-6 w-5 h-5 bg-gray-800 text-white flex items-center justify-center rounded-full text-sm">
-                      {pizza.length}
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="flex flex-col md:flex-row gap-4 items-start ps-5 pb-3">
-              <Link href="/login">
-                <span className="text-lg font-semibold">Login</span>
-              </Link>
-              <Link href="/register">
-                <span className="text-lg font-semibold">Register</span>
-              </Link>
-            </div>
-          )}
-        </div>
-      )}
     </nav>
   );
 };

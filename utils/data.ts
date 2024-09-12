@@ -125,3 +125,18 @@ export const avatar: choose[] = [
     img: "/testi3.png",
   },
 ];
+
+interface navLinksInterface{
+  href:string;
+  label:string
+}
+
+  export const navLinks: navLinksInterface[] = [
+    { href: "/", label: "Home" },
+    { href: "/pizza", label: "Pizza" },
+    { href: "/about", label: "About" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+    { href: "/login", label: "Login" },
+    { href: "/register", label: "Register" },
+  ];

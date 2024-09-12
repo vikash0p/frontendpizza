@@ -17,7 +17,6 @@ const Home = async () => {
     (value) => value.category === "new lunched"
   );
 
-  // console.log("🚀 ~ file: page.tsx:15 ~ filterPizza:", filterPizza);
 
   const headingData = {
     title: "Best Products",

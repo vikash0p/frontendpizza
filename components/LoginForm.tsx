@@ -51,7 +51,7 @@ const LoginForm = () => {
       formDataSchema.parse(formData);
       // If validation passes, perform login logic here
       // console.log(formData);
-      const res = await axios.post("http://localhost:5000/auth/login", {
+      const res = await axios.post("https://backendpizza-crjh.onrender.com/auth/login", {
         email: formData.email,
         password: formData.password,
       });

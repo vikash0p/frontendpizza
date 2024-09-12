@@ -31,16 +31,18 @@ interface childrenProps {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const AuthProvider: React.FC<childrenProps> = ({ children }) => {
+  
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const router = useRouter();
 
   const getUserData = async () => {
     try {
-      const res = await axios.get<User>("http://localhost:5000/auth/user", {
+      const res = await axios.get<User>("https://backendpizza-crjh.onrender.com/auth/user", {
         withCredentials: true,
       });
       const data = res.data;
+      console.log("🚀 ~ file: AuthProvider.tsx:44 ~ data:", data);
       if (res.status === 200 && data.success) {
         setUser(data);
         setIsAuthenticated(true);
@@ -56,7 +58,7 @@ const AuthProvider: React.FC<childrenProps> = ({ children }) => {
 
   const logoutUser = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/auth/logout");
+      const res = await axios.get("https://backendpizza-crjh.onrender.com/auth/logout");
       const data = res.data;
       if (res.status === 200 && data.success) {
         ToastSuccess(data.message);

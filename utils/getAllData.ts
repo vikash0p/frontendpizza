@@ -5,7 +5,7 @@ import {data} from './interface'
 
 export const getAllData = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/pizza/all");
+    const res = await axios.get("https://backendpizza-crjh.onrender.com/pizza/all");
     const data:data = await res.data;
 
     return data;
