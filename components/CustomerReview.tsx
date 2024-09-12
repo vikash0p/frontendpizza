@@ -47,6 +47,8 @@ export default function CustomerReview() {
                 className="w-28 h-28 m-auto border-4 border-textColor rounded-full"
                 width={300}
                 height={300}
+                priority={true}
+                sizes="104px"
               />
               <h2 className="text-xl font-semibold text-textColor">
                 {value.name}{" "}

@@ -34,6 +34,8 @@ export function SideBar() {
               width={500}
               height={250}
               className=" w-64 h-full mix-blend-darken "
+              priority={true}
+              sizes="256px"
             />
           </SheetTitle>
           <SheetDescription>
@@ -42,14 +44,15 @@ export function SideBar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-xl ${pathname=== link.href ? "text-textColor":"text-black" }`}
+                  className={`text-xl ${
+                    pathname === link.href ? "text-textColor" : "text-black"
+                  }`}
                   aria-label={link.label}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-
           </SheetDescription>
         </SheetHeader>
 

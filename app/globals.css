@@ -68,7 +68,7 @@
 
 
 
-  
+
 @layer base {
   * {
     @apply border-border;
@@ -105,4 +105,23 @@
 
 .backgroundGradient{
   background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(247, 30, 30) 100.3%);
+}
+.swiper-pagination {
+  display: block !important;
+}
+@media (min-width: 1024px) { /* Large screens and above */
+  .swiper-pagination {
+    display: none !important;
+  }
+}
+/* Navigation hidden on small screens, visible on large screens */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+@media (min-width: 1024px) { /* Large screens and above */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block !important;
+  }
 }

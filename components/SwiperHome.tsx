@@ -22,6 +22,7 @@ export default function SwiperHome({ pizzaData }: PizzaDataProps) {
       <Swiper
         cssMode={true}
         navigation={true}
+      
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}

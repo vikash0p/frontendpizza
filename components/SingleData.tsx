@@ -30,7 +30,7 @@ const SingleData: React.FC<singleDataProps> = ({ data }) => {
             alt={data.name}
             fill
             priority
-            sizes=""
+            sizes="256px"
             className="object-cover w-96 h-96 object-center rounded-lg"
           />
         </div>
@@ -68,13 +68,13 @@ const SingleData: React.FC<singleDataProps> = ({ data }) => {
               ToastSuccess(`${data.name} added to cart`);
               dispatch(
                 addToCart({
-                  id:data._id,
+                  id: data._id,
                   name: data.name,
                   description: data.description,
                   price: price,
                   image: data.image,
                   category: data.category,
-                  qty:1,
+                  qty: 1,
                 })
               );
             }}

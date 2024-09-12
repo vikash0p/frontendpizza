@@ -18,7 +18,7 @@ const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
               src={value.image}
               alt={value._id}
               fill
-              sizes="400px"
+              sizes="(min-width: 1220px) 284px, (min-width: 1040px) calc(27.5vw + 51px), (min-width: 380px) 375px, calc(46.67vw + 169px)"
               priority
             />
           </div>

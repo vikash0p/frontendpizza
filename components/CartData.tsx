@@ -73,6 +73,8 @@ const CartData = () => {
                         src={item.image}
                         alt={item.name}
                         className="h-12 w-12"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={true}
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -136,7 +138,10 @@ const CartData = () => {
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
                   Price{" "}
-                  <span className="ml-auto font-bold">     &#8377;{totalPrice }</span>
+                  <span className="ml-auto font-bold">
+                    {" "}
+                    &#8377;{totalPrice}
+                  </span>
                 </li>
                 <div className="w-full h-[2px] bg-black"></div>
                 <li className="flex flex-wrap gap-4 text-base font-bold border-t pt-4">

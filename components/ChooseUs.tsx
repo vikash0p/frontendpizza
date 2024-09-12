@@ -17,7 +17,9 @@ const ChooseUs = () => {
           alt="images"
           fill
           className="object-cover object-center"
-        //   sizes="(min-width: 1380px) 632px, (min-width: 1040px) calc(37.5vw + 122px), 100vw"
+          sizes="(min-width: 1380px) 632px, (min-width: 1040px) calc(37.5vw + 122px), 100vw"
+          priority={true}
+
         />
       </div>
       <div className="">
@@ -27,7 +29,7 @@ const ChooseUs = () => {
             return (
               <div
                 key={value.id}
-                className="flex flex-col md:flex-row gap-10 text-start h-full mt-8 "
+                className="flex flex-col md:flex-row gap-10 text-start items-center  px-1 md:px-0 shadow-2xl lg:shadow-none py-3 h-full mt-8 "
               >
                 <div className="">
                   <Image
@@ -36,6 +38,8 @@ const ChooseUs = () => {
                     width={200}
                     height={200}
                     className="object-fill bg-white size-50 p-5 rounded-full"
+                    priority={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="">

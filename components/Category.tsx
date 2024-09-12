@@ -45,7 +45,7 @@ const Category: React.FC<PizzaDataProps> = ({ pizzaData }) => {
         {category.map((value, index) => (
           <button
             type="button"
-            className={`px-8 py-2 bg-textColor hover:bg-red-900 text-white text-xl my-4 md:my-0 rounded-sm mx-3 ${
+            className={`px-8 py-2 bg-textColor hover:bg-red-900 text-white text-xl my-4 md:my-3 rounded-sm mx-3 ${
               index === ind ? "backgroundGradient" : ""
             }`}
             key={value}

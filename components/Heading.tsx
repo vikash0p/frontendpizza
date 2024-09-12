@@ -10,8 +10,8 @@ interface headingProps {
 
 const Heading = ({data }: headingProps) => {
   return (
-    <div className=" space-y-3">
-      <h1 className="text-5xl font-semibold">{data.title}</h1>
+    <div className="space-y-1 md:space-y-3">
+      <h1 className="text-2xl md:text-4xl lg:text-5xl font-semibold">{data.title}</h1>
       <div className="w-32 h-[2.5px] bg-textColor m-auto "></div>
       <p className={`${data.textCss}`}>{data.desc} </p>
     </div>

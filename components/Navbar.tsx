@@ -33,6 +33,8 @@ const Navbar = () => {
               width={500}
               height={250}
               className=" w-64 h-full mix-blend-darken "
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
 
@@ -79,7 +81,9 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-xl ${pathname=== link.href ? "text-textColor":"" }`}
+                  className={`text-xl ${
+                    pathname === link.href ? "text-textColor" : ""
+                  }`}
                   aria-label={link.label}
                 >
                   {link.label}
