@@ -49,7 +49,7 @@ const MenuItem: React.FC<menuItemProps> = ({ pizzaData }) => {
         })}
       </div>
       <div className="my-10">
-        <Link href={'/pizza'} className="bg-textColor  px-10 py-2 rounded-md text-xl text-white ">All Menu</Link>
+        <Link href={'/newPizza'} className="bg-textColor  px-10 py-2 rounded-md text-xl text-white ">All Menu</Link>
       </div>
     </div>
   );

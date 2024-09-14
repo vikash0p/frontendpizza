@@ -2,19 +2,19 @@ import React from "react";
 import { pizza } from "@/utils/interface";
 import Image from "next/image";
 import Link from "next/link";
+
 type PizzaProps = {
   value: pizza;
 };
 
 const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
-//   console.log("🚀 ~ file: PizzaCardOne.tsx:10 ~ value:", value);
   return (
     <>
       <Link href={`/pizza/${value._id}`}>
-        <div className=" rounded-lg text-black   bg-bgColor2 ">
-          <div className="relative overflow-x-hidden max-w-sm h-48">
+        <div className="rounded-lg text-black bg-bgColor2 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="relative overflow-hidden w-full h-48">
             <Image
-              className="rounded-t-lg object-cover object-center "
+              className="rounded-t-lg object-cover object-center"
               src={value.image}
               alt={value._id}
               fill
@@ -22,17 +22,19 @@ const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
               priority
             />
           </div>
-          <div className="p-6 text-surface">
-            <h5 className="mb-2 text-xl font-medium leading-tight min-h-16">
-              {value.name}{" "}
+          <div className="p-1 text-surface min-h-56  pt-3">
+            <h5 className="mb-2 text-base  font-medium leading-tight ">
+              {value.name}
             </h5>
-            <p className="mb-4 text-base">
+            <h1 className="text-lg uppercase  text-textColor font-semibold">
+              {value.category}
+            </h1>
+            <p className="mb-2 text-lg md:text-base lg:text-lg">
               {value.description.substring(0, 50)}...
             </p>
-            <h6 className="text-xl font-bold "> &#8377;{value.price[0]} /- </h6>
-            <h1 className="text-xl text-textColor font-semibold uppercase">
-              {value.category}{" "}
-            </h1>
+            <h6 className="text-lg  font-bold">
+              &#8377;{value.price[2]} /-
+            </h6>
           </div>
         </div>
       </Link>

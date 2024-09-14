@@ -8,6 +8,7 @@ import Image from "next/image";
 import { SideBar } from "./SideBar";
 import { navLinks } from "@/utils/data";
 import { usePathname } from "next/navigation";
+import SearchPizza from "./PizzaComponents/SearchPizza";
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -43,17 +44,7 @@ const Navbar = () => {
               <SideBar />
             </div>
             <div className="">
-              <label htmlFor="search" className="sr-only">
-                Search Product
-              </label>
-              <input
-                type="search"
-                name="search"
-                id="search"
-                aria-label="Search product"
-                className="w-full h-9 md:min-w-96 bg-bgColor2 border border-red-500 rounded-sm px-4 outline-none focus:border-red-700"
-                placeholder="Search product"
-              />
+              <SearchPizza />
             </div>
             <div className="">
               <div className="relative me-4">
@@ -96,19 +87,8 @@ const Navbar = () => {
           <div className="hidden lg:flex md:items-center">
             <div className="flex flex-row gap-2 items-center">
               {/* Search bar with transition */}
-              <div
-                className={`${
-                  isSearch ? "w-96 opacity-100" : "max-w-0 opacity-0"
-                } overflow-hidden transition-all duration-400 ease-linear`}
-              >
-                <input
-                  type="search"
-                  name="search"
-                  id="search"
-                  aria-label="Search product"
-                  className="w-full h-9 bg-bgColor2 border border-gray-800 rounded-sm px-4 outline-none focus:border-red-700"
-                  placeholder="Search product"
-                />
+              <div className={`${isSearch ? "w-96 opacity-100" : "max-w-0 opacity-0"} overflow-hidden transition-all duration-400 ease-linear`}>
+                <SearchPizza />
               </div>
 
               {/* Search button */}
@@ -116,8 +96,7 @@ const Navbar = () => {
                 type="button"
                 onClick={toggleSearch}
                 aria-label={isSearch ? "Close search" : "Open search"}
-                className="focus:outline-none"
-              >
+                className="focus:outline-none">
                 <BiSearch size={26} className="mr-4" />
               </button>
 

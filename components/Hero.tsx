@@ -41,7 +41,7 @@ export function Hero() {
                 </h2>
                 <div>
                   <Link
-                    href="/pizza"
+                    href="/newPizza"
                     className="px-6 py-2 md:px-8 md:py-3 bg-textColor text-white text-lg md:text-xl rounded-sm"
                   >
                     Buy Now

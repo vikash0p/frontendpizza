@@ -133,7 +133,7 @@ interface navLinksInterface{
 
   export const navLinks: navLinksInterface[] = [
     { href: "/", label: "Home" },
-    { href: "/pizza", label: "Pizza" },
+    { href: "/newPizza", label: "Pizza" },
     { href: "/about", label: "About" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
