@@ -1,6 +1,7 @@
 "use client";
 import { ToastError, ToastSuccess } from "@/utils/react-toastify";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { useState } from "react";
@@ -86,14 +87,11 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto shadow-2xl p-4 mt-20 border-textColor border-2 ">
+    <div className="max-w-md mx-auto shadow-2xl p-2 md:p-5 lg:p-8 mt-12 bg-bgColor2 ">
       <form onSubmit={handleSubmit} className="space-y-6 text-black">
         <div>
-          <label
-            htmlFor="fullName"
-            className="block text-sm font-medium text-textColor"
-          >
-            Full Name
+          <label htmlFor="fullName" className="block text-sm font-medium ">
+            Full Name <span className="text-red-600">*</span>
           </label>
           <input
             id="fullName"
@@ -107,11 +105,8 @@ const RegisterForm = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-textColor"
-          >
-            Email Address
+          <label htmlFor="email" className="block text-sm font-medium ">
+            Email Address <span className="text-red-600">*</span>
           </label>
           <input
             id="email"
@@ -125,11 +120,8 @@ const RegisterForm = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="password"
-            className="block text-sm font-medium text-textColor"
-          >
-            Password
+          <label htmlFor="password" className="block text-sm font-medium ">
+            Password <span className="text-red-600">*</span>
           </label>
           <input
             id="password"
@@ -143,11 +135,8 @@ const RegisterForm = () => {
           />
         </div>
         <div>
-          <label
-            htmlFor="role"
-            className="block text-sm font-medium text-textColor"
-          >
-            Role
+          <label htmlFor="role" className="block text-sm font-medium ">
+            Role <span className="text-red-600">*</span>
           </label>
           <select
             id="role"
@@ -156,7 +145,6 @@ const RegisterForm = () => {
             onChange={handleChange}
             className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
             autoComplete="off"
-
           >
             <option value="">Select Role</option>
             <option value="user">User</option>
@@ -171,6 +159,7 @@ const RegisterForm = () => {
           >
             Register
           </button>
+          <p className="pt-5">Already have a Account! <Link href={"/login"} className="text-blue-500 underline">login</Link> </p>
         </div>
       </form>
     </div>

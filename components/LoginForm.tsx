@@ -1,6 +1,7 @@
 "use client";
 import { ToastError, ToastSuccess } from "@/utils/react-toastify";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { z, ZodError } from "zod";
@@ -77,14 +78,14 @@ const LoginForm = () => {
     <div className="max-w-md mx-auto">
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 text-black border-2 border-textColor px-8 py-12"
+        className="space-y-6 text-black  px-8 py-12 bg-bgColor2  shadow-xl"
       >
         <div>
           <label
             htmlFor="email"
             className="block text-sm font-medium text-black"
           >
-            Email Address
+            Email Address <span className="text-red-600 sm">*</span>
           </label>
           <input
             id="email"
@@ -102,7 +103,7 @@ const LoginForm = () => {
             htmlFor="password"
             className="block text-sm font-medium text-black"
           >
-            Password
+            Password <span className="text-red-600 sm">*</span>
           </label>
           <input
             id="password"
@@ -123,6 +124,7 @@ const LoginForm = () => {
           >
             Login
           </button>
+          <p className="pt-5">create a new Account! <span> <Link href="/register" className="underline text-blue-500" >Register </Link> </span> </p>
         </div>
       </form>
     </div>
