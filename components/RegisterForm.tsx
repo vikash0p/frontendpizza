@@ -87,7 +87,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto shadow-2xl p-2 md:p-5 lg:p-8 mt-12 bg-bgColor2 ">
+    <div className="max-w-md mx-auto shadow-2xl p-5 lg:p-8 mt-12 bg-bgColor2 ">
       <form onSubmit={handleSubmit} className="space-y-6 text-black">
         <div>
           <label htmlFor="fullName" className="block text-sm font-medium ">
