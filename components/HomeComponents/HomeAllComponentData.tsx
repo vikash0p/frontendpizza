@@ -9,6 +9,7 @@ import Category from "@/components/Category";
 import Continental from "@/components/Continental";
 import MenuItem from "@/components/MenuItem";
 import HappyCustomer from "@/components/HappyCustomer";
+import FeaturesComponent from "../AboutComponents/FeaturesComponent";
 const HomeAllComponentData = async () => {
   const pizza = await getAllData();
   const pizzaData = pizza?.pizza;
@@ -31,6 +32,12 @@ const HomeAllComponentData = async () => {
       <div className="max-w-7xl m-auto text-center pb-10 space-y-10">
         <Heading data={headingData} />
         <SwiperHome pizzaData={filterPizza} />
+        <div>
+          <h5 className="text-center text-2xl  py-5 font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
+             Taste Of Pizza @Every Single Bite
+          </h5>
+        <FeaturesComponent />
+        </div>
         <ChooseUs />
         <Category pizzaData={pizzaData} />
         <Continental />
