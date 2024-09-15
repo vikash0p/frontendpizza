@@ -2,6 +2,7 @@
 import { useReducer } from "react";
 import Image from "next/image";
 import ReachUs from "./ReachUs";
+import ImageTopComponent from "../AboutComponents/ImageTopComponent";
 
 const initialState = {
   name: "",
@@ -28,9 +29,14 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="max-w-7xl m-auto  p-2 md:p-5 lg:p-10">
+    <section className="container m-auto  p-2 md:p-5 lg:p-10">
+      <ImageTopComponent
+        img="/about/Breadcrump-Image.jpg"
+        title="Contact"
+        des="Home / Contact"
+      />{" "}
       {/* Grid layout */}
-      <div className="w-full h-full grid md:grid-cols-2 gap-6 items-center">
+      <div className="w-full h-full grid md:grid-cols-2 gap-6 items-center my-14">
         {/* Left side: Image */}
         <div className="w-full relative h-72 md:h-96 lg:h-[550px]">
           <Image
@@ -133,11 +139,10 @@ export default function ContactForm() {
           </form>
         </div>
       </div>
-
       {/* Reach Us Section */}
       <ReachUs />
       {/* Google Maps Section */}
-      <section className=" mt-8 sm:mt-16 md:mt-32 lg:mt-48 w-full h-full lg:min-h-screen ">
+      <section className=" mt-8 sm:mt-16 md:mt-32 lg:mt-48 xl:mt-56 2xl:mt-60 w-full h-full lg:min-h-screen ">
         <h2 className="  md:text-xl lg:text-2xl font-bold mb-6 ">
           Our Location
         </h2>
@@ -156,14 +161,14 @@ export default function ContactForm() {
           ></iframe>
 
           {/* Chef holding the map image using Next.js Image */}
-          <div className="absolute -top-[102px] right-2 w-40 h-40 md:w-96 md:h-96 md:-top-[250px] sm:w-72 sm:h-72 sm:-top-[186px] md:right-12 lg:-top-[340px] lg:right-16 lg:w-1/2 lg:h-full">
+          <div className="absolute -top-[102px] right-2 w-40 h-40 md:w-96 md:h-96 md:-top-[250px] sm:w-72 sm:h-72 sm:-top-[186px] md:right-12 xl:-top-[340px] 2xl:-top-[360px] lg:right-16 lg:w-1/2 lg:h-full lg:-top-[320px] ">
             <Image
               src="/contact/contact12.png"
               alt="Chef holding the map"
               layout="fill"
               objectFit="contain"
               priority
-              sizes="(min-width: 1360px) 600px, (min-width: 1040px) calc(40vw + 64px), (min-width: 780px) 384px, (min-width: 640px) 288px, 160px"
+              sizes="(min-width: 1540px) 728px, (min-width: 1280px) 600px, (min-width: 1040px) 472px, (min-width: 780px) 384px, (min-width: 640px) 288px, 160px"
             />
           </div>
         </div>

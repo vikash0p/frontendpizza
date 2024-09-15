@@ -59,7 +59,7 @@ const CartData = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-gray-200 divide-y divide-gray-400">
+              <tbody className="bg-bgColor2 divide-y divide-gray-400">
                 {pizza.map((item, index) => (
                   <tr key={index}>
                     <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
@@ -117,16 +117,16 @@ const CartData = () => {
                 ))}
               </tbody>
             </table>
-            <div className="max-w-sm  shadow-2xl ms-auto p-5 mt-2 me-10">
+            <div className="max-w-sm bg-bgColor2 shadow-2xl ms-auto p-5 mt-2 me-10">
               <h3 className="text-xl font-bold text-[#333]">Summary</h3>
               <ul className="text-[#333] mt-6 space-y-4">
                 <li className="flex flex-wrap gap-4 text-sm">
                   Service{" "}
-                  <span className="ml-auto font-bold"> &#8377;{tax}</span>
+                  <span className="ml-auto font-bold"> &#8377;{tax.toFixed(2)}</span>
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
                   Tax{" "}
-                  <span className="ml-auto font-bold"> &#8377;{service}</span>
+                  <span className="ml-auto font-bold"> &#8377;{service.toFixed(2)}</span>
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
                   Product{" "}
