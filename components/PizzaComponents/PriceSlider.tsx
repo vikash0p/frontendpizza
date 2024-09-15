@@ -40,7 +40,7 @@ export function PriceSlider({ className, ...props }: SliderProps) {
         onValueChange={handleValueChange} // Call handleValueChange on slider change
         {...props}
       />
-      <p>&#8377;{priceValue} </p>
+      <p>&#8377;{priceValue} under</p>
     </div>
   );
 }
