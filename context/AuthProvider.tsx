@@ -31,7 +31,7 @@ interface childrenProps {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const AuthProvider: React.FC<childrenProps> = ({ children }) => {
-  
+
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const router = useRouter();
@@ -42,7 +42,7 @@ const AuthProvider: React.FC<childrenProps> = ({ children }) => {
         withCredentials: true,
       });
       const data = res.data;
-      console.log("🚀 ~ file: AuthProvider.tsx:44 ~ data:", data);
+      // console.log("🚀 ~ file: AuthProvider.tsx:44 ~ data:", data);
       if (res.status === 200 && data.success) {
         setUser(data);
         setIsAuthenticated(true);

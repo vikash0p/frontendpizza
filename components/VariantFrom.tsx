@@ -36,10 +36,10 @@ const VariantPriceForm: React.FC = () => {
 
   const handleSubmit =  async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(variantPrices);
+    // console.log(variantPrices);
     try {
       const res = await axios.post("http://localhost:5000/pizza/create",{
-        
+
       });
 
     } catch (error) {

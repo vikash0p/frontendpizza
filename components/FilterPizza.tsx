@@ -23,7 +23,7 @@ const FilterPizza: React.FC<FilterPizzaProps> = ({ pizzaData }) => {
     "All Pizza",
     ...new Set(pizzaData?.map((value) => value.category)),
   ];
-  console.log("🚀 ~ file: FilterPizza.tsx:14 ~ category:", category);
+  // console.log("🚀 ~ file: FilterPizza.tsx:14 ~ category:", category);
 
   const FilterCategory = (
     data: pizza[] | undefined,

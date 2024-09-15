@@ -18,7 +18,7 @@ const BlogComponent: React.FC = () => {
 //   const recentBlogs = blogs.filter((blog) => ["food", "drink", "pizza", "restaurant"].includes(blog.category));
 
   const blogCategory=Array.from(new Set(blogs.map((value)=>value.category)));
-  console.log("🚀 ~ file: BlogComponent.tsx:20 ~ blogCategory:", blogCategory);
+  // console.log("🚀 ~ file: BlogComponent.tsx:20 ~ blogCategory:", blogCategory);
 
   // Handle search functionality
  const handleSearch = (term: string) => {

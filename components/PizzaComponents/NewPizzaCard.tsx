@@ -22,7 +22,7 @@ interface PizzaCardProps {
 
 const NewPizzaCard: React.FC<PizzaCardProps> = ({ pizzaData }) => {
   const pizza = useSelector((state: RootState) => state.filter.filter_product);
-  console.log("🚀 ~ file: NewPizzaCard.tsx:13 ~ pizza:", pizza);
+  // console.log("🚀 ~ file: NewPizzaCard.tsx:13 ~ pizza:", pizza);
   const dispatch = useDispatch();
 
   useEffect(() => {

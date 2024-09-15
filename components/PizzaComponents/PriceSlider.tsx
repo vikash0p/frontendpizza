@@ -15,7 +15,7 @@ export function PriceSlider({ className, ...props }: SliderProps) {
   const priceValue = useSelector(
     (state: RootState) => state.filter.filters.price
   );
-  console.log("🚀 ~ file: PriceSlider.tsx:12 ~ priceValue:", priceValue);
+  // console.log("🚀 ~ file: PriceSlider.tsx:12 ~ priceValue:", priceValue);
 
   const dispatch = useDispatch();
 
@@ -29,16 +29,18 @@ export function PriceSlider({ className, ...props }: SliderProps) {
   };
 
   return (
-    <Slider
-      defaultValue={[priceValue]} // Set the initial value from the Redux store
-      max={300}
-      step={10}
-      min={149}
-
-      name="price"
-      className={cn("w-[90%]", className)}
-      onValueChange={handleValueChange} // Call handleValueChange on slider change
-      {...props}
-    />
+    <div>
+      <Slider
+        defaultValue={[priceValue]} // Set the initial value from the Redux store
+        max={300}
+        step={10}
+        min={149}
+        name="price"
+        className={cn("w-[90%]", className)}
+        onValueChange={handleValueChange} // Call handleValueChange on slider change
+        {...props}
+      />
+      <p>&#8377;{priceValue} </p>
+    </div>
   );
 }

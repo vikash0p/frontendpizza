@@ -8,7 +8,7 @@ import { BiSearch } from "react-icons/bi";
 
 const SearchPizza = () => {
   const value = useSelector((state: RootState) => state.filter.filters.search);
-  console.log("🚀 ~ file: SearchPizza.tsx:9 ~ value:", value);
+  // console.log("🚀 ~ file: SearchPizza.tsx:9 ~ value:", value);
   const dispatch = useDispatch();
   const router=useRouter();
 

@@ -25,7 +25,7 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Add your submit logic here
-    console.log(state);
+    // console.log(state);
   };
 
   return (

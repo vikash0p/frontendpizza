@@ -14,7 +14,7 @@ const CartData = () => {
   const dispatch = useAppDispatch();
   const myPizza = useAppSelector((state) => state.cart.cart);
   const pizza = [...myPizza].reverse();
-  console.log("🚀 ~ file: CartData.tsx:13 ~ pizza:", pizza);
+  // console.log("🚀 ~ file: CartData.tsx:13 ~ pizza:", pizza);
 
   const totalPrice= pizza.reduce((total, item) => total + item.price * item.qty, 0);
   const totalQty= pizza.reduce((total, item) => total + item.qty, 0);
