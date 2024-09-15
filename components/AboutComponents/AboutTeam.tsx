@@ -135,18 +135,20 @@ const AboutTeam = () => {
         {chefs.map((chef, index) => (
           <div
             key={index}
-            className="bg-bgColor2 p-6 rounded-lg shadow-lg text-center relative"
+            className="bg-bgColor2 p-6 rounded-lg shadow-lg text-center "
           >
-            <Image
-              fill
-              priority={true}
-              src={chef.image}
-              alt={chef.name}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-              sizes="(min-width: 1540px) 336px, (min-width: 1280px) 272px, (min-width: 1040px) 208px, (min-width: 780px) 320px, (min-width: 640px) 256px, calc(100vw - 96px)"
-            />
+            <div className="relative w-full h-60 my-4 ">
+              <Image
+                fill
+                priority={true}
+                src={chef.image}
+                alt={chef.name}
+                className="w-full h-48 object-cover rounded-xl mb-4"
+                sizes="(min-width: 1540px) 336px, (min-width: 1280px) 272px, (min-width: 1040px) 208px, (min-width: 780px) 320px, (min-width: 640px) 256px, calc(100vw - 96px)"
+              />
+            </div>
             <h3 className="text-2xl font-bold">{chef.name}</h3>
-            <p className="text-sm text-gray-500 mt-1">{chef.title}</p>
+            <p className="text-sm text-textColor mt-1">{chef.title}</p>
             <p className="mt-4 text-gray-600">{chef.description}</p>
             <p className="mt-2 text-gray-500">Experience: {chef.experience}</p>
 

@@ -22,7 +22,7 @@ const SingleBlogCard: React.FC<BlogProps> = ({ id }) => {
       <ImageTopComponent
         img="/about/Breadcrump-Image.jpg"
         title="Blog"
-        des={`Home / Blog / ${singleBlog.blogid}`}
+        des={`Home / Blog / ${singleBlog.title}`}
       />{" "}
       <div className="max-w-4xl mx-auto  shadow-lg rounded-lg overflow-hidden my-20">
         {/* Blog Image */}
