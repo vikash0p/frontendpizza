@@ -21,7 +21,7 @@ const CartData = () => {
 
   const service = 0.1 * totalPrice;
   const tax = 0.05 * totalPrice;
-
+const total = totalPrice + tax + service;
 
   // console.log("🚀 ~ file: CartData.tsx:7 ~ pizza:", pizza);
 
@@ -117,16 +117,22 @@ const CartData = () => {
                 ))}
               </tbody>
             </table>
-            <div className="max-w-sm bg-bgColor2 shadow-2xl ms-auto p-5 mt-2 me-10">
+            <div className="w-72 m-auto mt-10 p-3 bg-bgColor2 ">
               <h3 className="text-xl font-bold text-[#333]">Summary</h3>
               <ul className="text-[#333] mt-6 space-y-4">
                 <li className="flex flex-wrap gap-4 text-sm">
                   Service{" "}
-                  <span className="ml-auto font-bold"> &#8377;{tax.toFixed(2)}</span>
+                  <span className="ml-auto font-bold">
+                    {" "}
+                    &#8377;{tax.toFixed(2)}
+                  </span>
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
                   Tax{" "}
-                  <span className="ml-auto font-bold"> &#8377;{service.toFixed(2)}</span>
+                  <span className="ml-auto font-bold">
+                    {" "}
+                    &#8377;{service.toFixed(2)}
+                  </span>
                 </li>
                 <li className="flex flex-wrap gap-4 text-sm">
                   Product{" "}
@@ -144,11 +150,8 @@ const CartData = () => {
                   </span>
                 </li>
                 <div className="w-full h-[2px] bg-black"></div>
-                <li className="flex flex-wrap gap-4 text-base font-bold border-t pt-4">
-                  Total{" "}
-                  <span className="ml-auto">
-                    &#8377;{totalPrice + tax + service}
-                  </span>
+                <li className="flex flex-wrap gap-4 text-base font-bold ">
+                  Total <span className="ml-auto">&#8377;{total.toFixed(2)}</span>
                 </li>
               </ul>
             </div>
