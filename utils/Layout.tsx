@@ -1,6 +1,7 @@
 "use client";
 import { persistor, store } from "@/Redux-toolkit/store";
 import Footer from "@/components/Footer";
+import GoToTop from "@/components/GoToTop";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "@/context/AuthProvider";
 import React from "react";
@@ -24,6 +25,7 @@ const Layout: React.FC<layoutChildrenProps> = ({ children }) => {
           </PersistGate>
         </Provider>
         <ToastContainer />
+        <GoToTop />
       </AuthProvider>
     </div>
   );
