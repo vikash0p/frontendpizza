@@ -25,8 +25,9 @@ export const metadata: Metadata = {
 };
 
 const User = () => {
+  
   return (
-    <div>
+    <div className="w-full min-h-screen ">
       user
     </div>
   )
