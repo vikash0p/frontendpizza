@@ -2,6 +2,8 @@
   "name": "frontendpizza",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "proxy": "https://backendpizza-crjh.onrender.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

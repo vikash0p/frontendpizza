@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from "next";
+import UserDetailsData from "@/components/userComponents/UserDetailsData";
 
 export const metadata: Metadata = {
   title: "User Profile | Home Pizza | Manage Your Account",
@@ -25,10 +26,10 @@ export const metadata: Metadata = {
 };
 
 const User = () => {
-  
+
   return (
     <div className="w-full min-h-screen ">
-      user
+      <UserDetailsData />
     </div>
   )
 }
