@@ -46,19 +46,25 @@ const LoginForm = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    if(!formData.email || !formData.password) return ToastError("Email and password are required");
+    if (!formData.email || !formData.password)
+      return ToastError("Email and password are required");
     try {
       // Validate form data
       formDataSchema.parse(formData);
       // If validation passes, perform login logic here
       // console.log(formData);
-      const res = await axios.post("https://backendpizza-crjh.onrender.com/auth/login", {
-        email: formData.email,
-        password: formData.password,
-      });
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
+        
+        {
+
+          email: formData.email,
+          password: formData.password,
+        }
+      );
+
       const data = await res.data;
       console.log("🚀 ~ file: LoginForm.tsx:58 ~ data:", data);
-      if (res.status === 201 && data) {
+      if ( data.success===true) {
         ToastSuccess(data.message);
         router.refresh();
         router.push("/user");
@@ -66,7 +72,6 @@ const LoginForm = () => {
 
       setError(null); // Reset error state
     } catch (err: any) {
-
       if (err instanceof ZodError) {
         setError(err.errors[0].message);
         ToastError(err.errors[0].message);
@@ -124,7 +129,15 @@ const LoginForm = () => {
           >
             Login
           </button>
-          <p className="pt-5">create a new Account! <span> <Link href="/register" className="underline text-blue-500" >Register </Link> </span> </p>
+          <p className="pt-5">
+            create a new Account!{" "}
+            <span>
+              {" "}
+              <Link href="/register" className="underline text-blue-500">
+                Register{" "}
+              </Link>{" "}
+            </span>{" "}
+          </p>
         </div>
       </form>
     </div>

@@ -2,7 +2,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-// Ensure credentials are included for all axios requests
 axios.defaults.withCredentials = true;
 
 interface UserDetails {
@@ -21,15 +20,18 @@ const UserDetailsData: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const getUserDetails = async () => {
+    const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/user`;
+    console.log("Requesting user details from:", url);
     try {
-      const response = await axios.get<UserDetails>(
-        "https://backendpizza-crjh.onrender.com/auth/user",
-        { withCredentials: true }
-      );
+      const response = await axios.get<UserDetails>(url, { withCredentials: true,});
+      console.log("🚀 ~ file: UserDetailsData.tsx:27 ~ response:", response);
       setUserDetails(response.data);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error fetching user details:", err);
-      setError("Failed to load user details." + err);
+      setError(
+        "Failed to load user details. " +
+          (err.response?.data?.message || err.message)
+      );
     }
   };
 
@@ -45,9 +47,9 @@ const UserDetailsData: React.FC = () => {
     <div>
       {userDetails ? (
         <div>
-          <h1>Welcome, {userDetails?.user.fullName}</h1>
-          <p>Email: {userDetails?.user.email}</p>
-          {/* Display other details if available */}
+          <h1>Welcome, {userDetails.user.fullName}</h1>
+          <p>Email: {userDetails.user.email}</p>
+          <p>Role: {userDetails.user.role}</p>
         </div>
       ) : (
         <p>Loading...</p>

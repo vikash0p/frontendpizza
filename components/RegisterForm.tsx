@@ -62,7 +62,7 @@ const RegisterForm = () => {
     try {
       formDataSchema.parse(formData);
       // console.log(formData);
-      const res = await axios.post("https://backendpizza-crjh.onrender.com/auth/register", {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`, {
         fullName: formData.fullName,
         email: formData.email,
         password: formData.password,
