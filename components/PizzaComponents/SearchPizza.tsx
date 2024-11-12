@@ -15,8 +15,12 @@ const SearchPizza = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(filterProduct())
-    router.push('/newPizza')
-  };
+    router.push('/newPizza');
+
+  window.scrollBy({
+    top: 330,
+    behavior: "smooth", // Enables smooth scrolling
+  });  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch( changeHandlerValue({ name: e.target.name, value: e.target.value }));
