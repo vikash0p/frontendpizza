@@ -3,18 +3,30 @@ import cartReducer from "./slice/cartSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import filterReducer from './slice/filterSlice'
-const persistConfig = {
-  key: "root",
+import userReducer from './slice/userSlice'
+const cartPersistConfig = {
+  key: "cart",
   storage,
+  whitelist: ["items"], // Example: only persist 'items' in cart
 };
 
-const persistedReducer = persistReducer(persistConfig, cartReducer);
+const userPersistConfig = {
+  key: "user",
+  storage,
+  blacklist: ["session"], // Example: don't persist 'session' in user
+};
+
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistedUserReducer = persistReducer(userPersistConfig, userReducer);
+
 
 export const store = configureStore({
   reducer: {
-    cart: persistedReducer,
-    filter:filterReducer,
+    cart: persistedCartReducer,
+    filter: filterReducer,
+    user: persistedUserReducer,
   },
+  devTools: true,
 });
 
 export const persistor = persistStore(store);

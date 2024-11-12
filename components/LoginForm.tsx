@@ -54,7 +54,7 @@ const LoginForm = () => {
       // If validation passes, perform login logic here
       // console.log(formData);
       const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
-        
+
         {
 
           email: formData.email,

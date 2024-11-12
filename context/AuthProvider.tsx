@@ -28,54 +28,66 @@ type AuthContextType = {
 interface childrenProps {
   children: React.ReactNode;
 }
+
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const AuthProvider: React.FC<childrenProps> = ({ children }) => {
-
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const router = useRouter();
 
   const getUserData = async () => {
     try {
-      const res = await axios.get<User>("https://backendpizza-crjh.onrender.com/auth/user", {
-        withCredentials: true,
-      });
+      const res = await axios.get<User>(
+        "https://backendpizza-crjh.onrender.com/auth/user",
+        {
+          withCredentials: true,
+        }
+      );
       const data = res.data;
-      // console.log("🚀 ~ file: AuthProvider.tsx:44 ~ data:", data);
+
+      // Check if authentication is successful
       if (res.status === 200 && data.success) {
         setUser(data);
         setIsAuthenticated(true);
       } else {
-        // Handle authentication failure or other errors
+        // If authentication fails, reset user and authentication state
         setIsAuthenticated(false);
         console.error("Authentication failed:", data.message);
+        setUser(null);
       }
     } catch (error: any) {
       console.error("Error fetching user data:", error.message);
+      setIsAuthenticated(false);
+      setUser(null);
     }
   };
 
   const logoutUser = async () => {
     try {
-      const res = await axios.get("https://backendpizza-crjh.onrender.com/auth/logout");
+      const res = await axios.get(
+        "https://backendpizza-crjh.onrender.com/auth/logout"
+      );
       const data = res.data;
+
       if (res.status === 200 && data.success) {
         ToastSuccess(data.message);
         setUser(null);
         setIsAuthenticated(false);
-
-        router.refresh();
-        router.push("/login");
+        router.push("/login"); // Redirect to login after successful logout
       } else {
-        // Handle authentication failure or other errors
         console.error("Logout failed:", data.message);
       }
-    } catch (error:any) {
-      ToastError(error.message)
+    } catch (error: any) {
+      ToastError(error.message);
       console.log("🚀 ~ file: AuthProvider.tsx:70 ~ error:", error);
     }
   };
+
+  useEffect(() => {
+    // Check if user is already authenticated on mount
+    getUserData();
+  }, []);
 
   return (
     <AuthContext.Provider

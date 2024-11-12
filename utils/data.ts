@@ -1,25 +1,11 @@
+import {
+  chooseProps,
+  continentalProps,
+  sliderProps,
+  navLinksInterface,
+} from "@/types/interface";
 
-interface slider{
-    id:number;
-    name:string;
-    tag:string;
-    description:string;
-    img:string
-}
-interface choose{
-    id:number;
-    name:string;
-    desc:string;
-    img:string
-}
-
-interface continental{
-    id:number;
-    name:string;
-    desc:string;
-    time:string
-}
-export const slider :slider[] = [
+export const slider: sliderProps[] = [
   {
     id: 1,
     name: "seafood pizza",
@@ -37,7 +23,7 @@ export const slider :slider[] = [
   },
 ];
 
-export const choose:choose[] = [
+export const choose: chooseProps[] = [
   {
     id: 1,
     name: "Choose Your Item",
@@ -58,9 +44,7 @@ export const choose:choose[] = [
   },
 ];
 
-
-
-export const support: choose[] = [
+export const support: chooseProps[] = [
   {
     id: 1,
     name: "Choose Your Item",
@@ -79,10 +63,9 @@ export const support: choose[] = [
     desc: "lose uncle join recently wear bicycle develop radio something along enough double let root brought monkey ",
     img: "/Support.png",
   },
-
 ];
 
-export const continental: continental[] = [
+export const continental: continentalProps[] = [
   {
     id: 1,
     name: "America",
@@ -103,9 +86,7 @@ export const continental: continental[] = [
   },
 ];
 
-
-
-export const avatar: choose[] = [
+export const avatar: chooseProps[] = [
   {
     id: 1,
     name: "Choose Your Item",
@@ -126,17 +107,12 @@ export const avatar: choose[] = [
   },
 ];
 
-interface navLinksInterface{
-  href:string;
-  label:string
-}
-
-  export const navLinks: navLinksInterface[] = [
-    { href: "/", label: "Home" },
-    { href: "/newPizza", label: "Pizza" },
-    { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
-    { href: "/login", label: "Login" },
-    { href: "/register", label: "Register" },
-  ];
+export const navLinks: navLinksInterface[] = [
+  { href: "/", label: "Home" },
+  { href: "/newPizza", label: "Pizza" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+  { href: "/login", label: "Login" },
+  { href: "/register", label: "Register" },
+];
