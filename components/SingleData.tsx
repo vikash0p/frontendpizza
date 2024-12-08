@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 import Image from "next/image";
 import { addToCart } from "@/Redux-toolkit/slice/cartSlice";
 import { useAppDispatch } from "@/Redux-toolkit/hooks";

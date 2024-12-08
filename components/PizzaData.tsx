@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import PizzaCardOne from "./PizzaCardOne";
-import {pizza} from '@/utils/interface'
+import { pizza } from "@/types/pizzaInterface";
 
 interface pizzaDataProps {
   pizzaData: pizza[] | undefined;
@@ -19,7 +19,14 @@ const PizzaData: React.FC<pizzaDataProps> = ({ pizzaData }) => {
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4  gap-4 py-10  ">
           {pizzaData.map((value) => {
             return (
-              <Suspense fallback={<div className="w-full h-full text-center flex flex-col justify-center items-center text-textColor text-2xl ">Loading...</div>} key={value._id}>
+              <Suspense
+                fallback={
+                  <div className="w-full h-full text-center flex flex-col justify-center items-center text-textColor text-2xl ">
+                    Loading...
+                  </div>
+                }
+                key={value._id}
+              >
                 <PizzaCardOne value={value} />
               </Suspense>
             );

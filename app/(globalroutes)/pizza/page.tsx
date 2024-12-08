@@ -1,6 +1,6 @@
 import { getAllData } from "@/utils/getAllData";
 import React from "react";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 import NewPizzaCard from "@/components/PizzaComponents/NewPizzaCard";
 
 import { Metadata } from "next";
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
 
 const NewPizza = async () => {
   const data = await getAllData();
-  const pizzaData:pizza[] = data?.pizza || [] ;
+  const pizzaData: pizza[] = data?.pizza || [];
 
   return (
     <div className="">
-        <NewPizzaCard pizzaData={pizzaData} />
+      <NewPizzaCard pizzaData={pizzaData} />
     </div>
   );
 };

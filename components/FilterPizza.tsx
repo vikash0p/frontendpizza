@@ -1,7 +1,7 @@
 "use client";
 import PizzaData from "@/components/PizzaData";
 import React, { Suspense, useState } from "react";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 
 interface FilterPizzaProps {
   pizzaData: Array<pizza> | undefined;

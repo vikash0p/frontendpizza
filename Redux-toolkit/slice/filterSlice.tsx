@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 
 interface State {
   all_product: pizza[];

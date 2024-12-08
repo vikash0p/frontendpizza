@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { pizza } from "@/utils/interface"; // ensure this is the correct path for the interface
+import { pizza } from "@/types/pizzaInterface"; // ensure this is the correct path for the interface
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearAllFilters,

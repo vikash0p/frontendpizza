@@ -1,8 +1,8 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Heading from "./Heading";
 import SwiperHome from "./SwiperHome";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 
 interface PizzaDataProps {
   pizzaData: pizza[] | undefined;

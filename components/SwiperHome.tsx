@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { Suspense, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 import PizzaCardOne from "./PizzaCardOne";
 interface PizzaDataProps {
   pizzaData: pizza[] | undefined;
@@ -22,7 +22,6 @@ export default function SwiperHome({ pizzaData }: PizzaDataProps) {
       <Swiper
         cssMode={true}
         navigation={true}
-      
         mousewheel={true}
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}

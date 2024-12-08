@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,7 +49,12 @@ const MenuItem: React.FC<menuItemProps> = ({ pizzaData }) => {
         })}
       </div>
       <div className="my-10">
-        <Link href={'/newPizza'} className="bg-textColor  px-10 py-2 rounded-md text-xl text-white ">All Menu</Link>
+        <Link
+          href={"/newPizza"}
+          className="bg-textColor  px-10 py-2 rounded-md text-xl text-white "
+        >
+          All Menu
+        </Link>
       </div>
     </div>
   );

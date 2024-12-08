@@ -1,5 +1,5 @@
 import React from "react";
-import { pizza } from "@/utils/interface";
+import { pizza } from "@/types/pizzaInterface";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,9 +32,7 @@ const PizzaCardOne: React.FC<PizzaProps> = ({ value }) => {
             <p className="mb-2 text-lg md:text-base lg:text-lg">
               {value.description.substring(0, 50)}...
             </p>
-            <h6 className="text-lg  font-bold">
-              &#8377;{value.price[2]} /-
-            </h6>
+            <h6 className="text-lg  font-bold">&#8377;{value.price[2]} /-</h6>
           </div>
         </div>
       </Link>
