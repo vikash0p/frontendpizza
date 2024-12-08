@@ -3,7 +3,7 @@ import { Lobster, Montserrat } from "next/font/google";
 
 export const lobster = Lobster({
   subsets: ["latin"],
-  weight: "400", // Specify weights if required
+  weight: ["400"], // Specify weights if required
   display: "swap", // Optimize loading
 });
 

@@ -6,7 +6,6 @@ import {
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 import { useState } from "react";
 import { z, ZodError } from "zod";
 
@@ -48,6 +47,7 @@ const RegisterForm = () => {
     role: "",
   });
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false); // Loading state
   const router = useRouter();
 
   const handleChange = (
@@ -62,9 +62,11 @@ const RegisterForm = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    if (loading) return; // Prevent multiple submissions
+    setLoading(true); // Set loading to true
+
     try {
       formDataSchema.parse(formData);
-      // console.log(formData);
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
         {
@@ -74,29 +76,32 @@ const RegisterForm = () => {
           role: formData.role,
         }
       );
+
       const data = await res.data;
       if (res.status === 201 && data) {
         ToastSuccess(data.message);
         router.refresh();
         router.push("/login");
       }
-      // console.log("🚀 ~ file: RegisterForm.tsx:69 ~ data:", data);
+
       setError(null); // Reset error state
     } catch (err: any) {
-      ToastError(err.message);
-      console.log("🚀 ~ file: RegisterForm.tsx:77 ~ err:", err);
       if (err instanceof ZodError) {
-        // Handle validation errors
         setError(err.errors[0].message);
+        ToastError(err.errors[0].message);
+      } else {
+        ToastError("Something went wrong. Please try again.");
       }
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
   return (
-    <div className="max-w-md mx-auto shadow-2xl p-5 lg:p-8 mt-12 bg-bgColor2 ">
+    <div className="max-w-md mx-auto shadow-2xl p-5 lg:p-8 mt-12 bg-bgColor2">
       <form onSubmit={handleSubmit} className="space-y-6 text-black">
         <div>
-          <label htmlFor="fullName" className="block text-sm font-medium ">
+          <label htmlFor="fullName" className="block text-sm font-medium">
             Full Name <span className="text-red-600">*</span>
           </label>
           <input
@@ -105,13 +110,13 @@ const RegisterForm = () => {
             type="text"
             value={formData.fullName}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3  block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
             autoComplete="off"
             placeholder="John Doe"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium ">
+          <label htmlFor="email" className="block text-sm font-medium">
             Email Address <span className="text-red-600">*</span>
           </label>
           <input
@@ -120,13 +125,13 @@ const RegisterForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
             autoComplete="off"
             placeholder="Enter your email address"
           />
         </div>
         <div>
-          <label htmlFor="password" className="block text-sm font-medium ">
+          <label htmlFor="password" className="block text-sm font-medium">
             Password <span className="text-red-600">*</span>
           </label>
           <input
@@ -135,13 +140,13 @@ const RegisterForm = () => {
             type="password"
             value={formData.password}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
             autoComplete="off"
             placeholder="Enter your password"
           />
         </div>
         <div>
-          <label htmlFor="role" className="block text-sm font-medium ">
+          <label htmlFor="role" className="block text-sm font-medium">
             Role <span className="text-red-600">*</span>
           </label>
           <select
@@ -149,7 +154,7 @@ const RegisterForm = () => {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textCoring-textColor border-gray-300 rounded-md"
+            className="mt-1 py-2 ps-3 block w-full shadow-sm focus:ring-textColor focus:border-textColor border-gray-300 rounded-md"
             autoComplete="off"
           >
             <option value="">Select Role</option>
@@ -161,15 +166,20 @@ const RegisterForm = () => {
         <div>
           <button
             type="submit"
-            className="w-full flex justify-center py-2 ps-3 px-4 border border-transparent rounded-md shadow-sm  bg-textColor text-white hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor"
+            disabled={loading} // Disable button while loading
+            className={`w-full flex justify-center py-2 ps-3 px-4 border border-transparent rounded-md shadow-sm ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-textColor hover:bg-green-500 text-white"
+            } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-textColor`}
           >
-            Register
+            {loading ? "Registering..." : "Register"}
           </button>
           <p className="pt-5">
-            Already have a Account!{" "}
+            Already have an Account?{" "}
             <Link href={"/login"} className="text-blue-500 underline">
-              login
-            </Link>{" "}
+              Login
+            </Link>
           </p>
         </div>
       </form>
