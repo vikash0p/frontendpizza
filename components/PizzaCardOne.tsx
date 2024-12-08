@@ -1,5 +1,5 @@
 import React from "react";
-import { pizza } from "@/types/pizzaInterface";
+import { pizza } from "@/utils/types/pizzaInterface";
 import Image from "next/image";
 import Link from "next/link";
 

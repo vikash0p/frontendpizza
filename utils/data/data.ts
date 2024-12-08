@@ -3,7 +3,7 @@ import {
   continentalProps,
   sliderProps,
   navLinksInterface,
-} from "@/types/interface";
+} from "@/utils/types/interface";
 
 export const slider: sliderProps[] = [
   {

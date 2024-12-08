@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { UserDetails } from "@/types/interface";
+import { UserDetails } from "@/utils/types/interface";
 import { fetchUserDetails, logoutUserDetails } from "@/utils/getUser";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, logoutUser } from "@/Redux-toolkit/slice/userSlice";

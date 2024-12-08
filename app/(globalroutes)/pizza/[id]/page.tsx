@@ -1,7 +1,7 @@
 // Import necessary components and utilities
 import SingleData from "@/components/SingleData";
 import axios from "axios";
-import { pizza } from "@/types/pizzaInterface";
+import { pizza } from "@/utils/types/pizzaInterface";
 import { Metadata } from "next";
 
 // Function to fetch pizza data

@@ -1,6 +1,6 @@
 import { getAllData } from "@/utils/getAllData";
 import React from "react";
-import { pizza } from "@/types/pizzaInterface";
+import { pizza } from "@/utils/types/pizzaInterface";
 import NewPizzaCard from "@/components/PizzaComponents/NewPizzaCard";
 
 import { Metadata } from "next";

@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
-import { pizza } from "@/types/pizzaInterface";
+import { pizza } from "@/utils/types/pizzaInterface";
 import Image from "next/image";
 import Link from "next/link";
 
