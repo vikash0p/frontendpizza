@@ -5,7 +5,7 @@ import {
   IncreaseQty,
   removeFromCart,
 } from "@/Redux-toolkit/slice/cartSlice";
-import { ToastSuccess } from "@/utils/react-toastify";
+import { ToastSuccess } from "@/utils/utils-function/react-toastify";
 import Image from "next/image";
 import React from "react";
 import { BiMinus, BiPlus, BiTrash } from "react-icons/bi";
@@ -16,12 +16,15 @@ const CartData = () => {
   const pizza = [...myPizza].reverse();
   // console.log("🚀 ~ file: CartData.tsx:13 ~ pizza:", pizza);
 
-  const totalPrice= pizza.reduce((total, item) => total + item.price * item.qty, 0);
-  const totalQty= pizza.reduce((total, item) => total + item.qty, 0);
+  const totalPrice = pizza.reduce(
+    (total, item) => total + item.price * item.qty,
+    0
+  );
+  const totalQty = pizza.reduce((total, item) => total + item.qty, 0);
 
   const service = 0.1 * totalPrice;
   const tax = 0.05 * totalPrice;
-const total = totalPrice + tax + service;
+  const total = totalPrice + tax + service;
 
   // console.log("🚀 ~ file: CartData.tsx:7 ~ pizza:", pizza);
 
@@ -151,7 +154,8 @@ const total = totalPrice + tax + service;
                 </li>
                 <div className="w-full h-[2px] bg-black"></div>
                 <li className="flex flex-wrap gap-4 text-base font-bold ">
-                  Total <span className="ml-auto">&#8377;{total.toFixed(2)}</span>
+                  Total{" "}
+                  <span className="ml-auto">&#8377;{total.toFixed(2)}</span>
                 </li>
               </ul>
             </div>

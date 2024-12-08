@@ -1,5 +1,8 @@
 "use client";
-import { ToastError, ToastSuccess } from "@/utils/react-toastify";
+import {
+  ToastError,
+  ToastSuccess,
+} from "@/utils/utils-function/react-toastify";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -53,10 +56,10 @@ const LoginForm = () => {
       formDataSchema.parse(formData);
       // If validation passes, perform login logic here
       // console.log(formData);
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
 
         {
-
           email: formData.email,
           password: formData.password,
         }
@@ -64,7 +67,7 @@ const LoginForm = () => {
 
       const data = await res.data;
       console.log("🚀 ~ file: LoginForm.tsx:58 ~ data:", data);
-      if ( data.success===true) {
+      if (data.success === true) {
         ToastSuccess(data.message);
         router.refresh();
         router.push("/user");

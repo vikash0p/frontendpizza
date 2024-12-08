@@ -1,5 +1,8 @@
 "use client";
-import { ToastError, ToastSuccess } from "@/utils/react-toastify";
+import {
+  ToastError,
+  ToastSuccess,
+} from "@/utils/utils-function/react-toastify";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -45,7 +48,7 @@ const RegisterForm = () => {
     role: "",
   });
   const [error, setError] = useState<string | null>(null);
-  const router=useRouter();
+  const router = useRouter();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -62,22 +65,25 @@ const RegisterForm = () => {
     try {
       formDataSchema.parse(formData);
       // console.log(formData);
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`, {
-        fullName: formData.fullName,
-        email: formData.email,
-        password: formData.password,
-        role: formData.role,
-      });
-      const data= await res.data;
-      if(res.status === 201 && data){
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`,
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
+        }
+      );
+      const data = await res.data;
+      if (res.status === 201 && data) {
         ToastSuccess(data.message);
         router.refresh();
-        router.push('/login')
+        router.push("/login");
       }
       // console.log("🚀 ~ file: RegisterForm.tsx:69 ~ data:", data);
       setError(null); // Reset error state
-    } catch (err:any) {
-      ToastError(err.message)
+    } catch (err: any) {
+      ToastError(err.message);
       console.log("🚀 ~ file: RegisterForm.tsx:77 ~ err:", err);
       if (err instanceof ZodError) {
         // Handle validation errors
@@ -159,7 +165,12 @@ const RegisterForm = () => {
           >
             Register
           </button>
-          <p className="pt-5">Already have a Account! <Link href={"/login"} className="text-blue-500 underline">login</Link> </p>
+          <p className="pt-5">
+            Already have a Account!{" "}
+            <Link href={"/login"} className="text-blue-500 underline">
+              login
+            </Link>{" "}
+          </p>
         </div>
       </form>
     </div>
