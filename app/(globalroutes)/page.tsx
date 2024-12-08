@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Enjoy a wide selection of freshly baked pizzas from Home Pizza. With a variety of toppings and flavors, our pizzas are crafted to perfection and delivered hot and fresh.",
     url: "https://homepizza.vercel.app/",
-    images: "/pizza-icon-512x512.png", // Path to the pizza image
+    images: "/opengraph-image.jpg",
     siteName: "Home Pizza",
   },
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Home Pizza | Delicious Pizza Delivered Fresh to Your Doorstep",
     description:
       "Order your favorite pizza online and get it delivered fresh from Home Pizza.",
-    images: "/pizza-icon-512x512.png", // Path to the pizza image for Twitter
+    images: "/opengraph-image.jpg",
   },
 };
 
