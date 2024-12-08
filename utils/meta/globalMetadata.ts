@@ -61,7 +61,7 @@ export const globalMetadata = {
     { name: "Hot Pizza Team" },
     {
       name: "Hot Pizza",
-      url: process.env.NEXT_PUBLIC_FRONTEND_URL || "https://defaultdomain.com",
+      url: process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000",
     },
   ],
 
