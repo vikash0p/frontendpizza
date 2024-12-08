@@ -1,4 +1,4 @@
-import CartData from '@/components/CartData'
+import CartData from '@/components/cart-components/CartData'
 import React from 'react'
 import { Metadata } from "next";
 import { cartMetadata } from "@/utils/meta/cartMetadata";
