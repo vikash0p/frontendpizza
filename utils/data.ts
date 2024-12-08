@@ -109,7 +109,7 @@ export const avatar: chooseProps[] = [
 
 export const navLinks: navLinksInterface[] = [
   { href: "/", label: "Home" },
-  { href: "/newPizza", label: "Pizza" },
+  { href: "/pizza", label: "Pizza" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
