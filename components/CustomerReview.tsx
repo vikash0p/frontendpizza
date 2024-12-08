@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { avatar } from "@/utils/data";
+import { avatar } from "@/utils/data/data";
 import Image from "next/image";
 
 export default function CustomerReview() {

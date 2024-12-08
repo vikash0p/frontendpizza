@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Heading from "./Heading";
-import { support } from "@/utils/data";
+import { support } from "@/utils/data/data";
 
 const ChooseUs = () => {
   const headingData = {
@@ -19,7 +19,6 @@ const ChooseUs = () => {
           className="object-cover object-center"
           sizes="(min-width: 1380px) 632px, (min-width: 1040px) calc(37.5vw + 122px), 100vw"
           priority={true}
-
         />
       </div>
       <div className="">

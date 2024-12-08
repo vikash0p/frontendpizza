@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FaBars } from "react-icons/fa";
 
 import {
@@ -12,12 +12,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import { navLinks } from "@/utils/data";
+import { navLinks } from "@/utils/data/data";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export function SideBar() {
-    const pathname=usePathname();
+  const pathname = usePathname();
   return (
     <Sheet>
       <SheetTrigger asChild>

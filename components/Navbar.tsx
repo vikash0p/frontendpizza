@@ -6,24 +6,22 @@ import { IoCartSharp } from "react-icons/io5";
 import { useAppSelector } from "@/Redux-toolkit/hooks";
 import Image from "next/image";
 import { SideBar } from "./SideBar";
-import { navLinks } from "@/utils/data";
+import { navLinks } from "@/utils/data/data";
 import { usePathname } from "next/navigation";
 import SearchPizza from "./PizzaComponents/SearchPizza";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Redux-toolkit/store";
 
 const Navbar = () => {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
   const pizza = useAppSelector((state) => state.cart.cart);
-  const user=useSelector((state:RootState)=>state.user.user)
+  const user = useSelector((state: RootState) => state.user.user);
   const [isSearch, setIsSearch] = useState<boolean>(false);
 
   const toggleSearch = () => {
     setIsSearch((prev) => !prev);
   };
-
-
 
   return (
     <nav className="bg-bgColor text-black  sticky top-0 left-0 right-0 z-50">

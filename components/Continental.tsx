@@ -1,5 +1,5 @@
 "use client";
-import { continental } from "@/utils/data";
+import { continental } from "@/utils/data/data";
 import Image from "next/image";
 import React from "react";
 
@@ -18,17 +18,20 @@ const Continental = () => {
         </div>
       </div>
       <div className="flex flex-col gap-8 text-start items-center justify-center w-full h-full">
-        {
-            continental.map((value, index)=>{
-                return(
-                    <div key={value.id} className="w-full h-full px-10 py-7 rounded-md bg-bgColor2" >
-                            <h2 className="text-2xl font-semibold ">{value.name} </h2>
-                            <p>{value.desc} </p>
-                            <h4 className="text-xl font-semibold text-textColor">{value.time} </h4>
-                    </div>
-                )
-            })
-        }
+        {continental.map((value, index) => {
+          return (
+            <div
+              key={value.id}
+              className="w-full h-full px-10 py-7 rounded-md bg-bgColor2"
+            >
+              <h2 className="text-2xl font-semibold ">{value.name} </h2>
+              <p>{value.desc} </p>
+              <h4 className="text-xl font-semibold text-textColor">
+                {value.time}{" "}
+              </h4>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

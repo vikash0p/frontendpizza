@@ -1,4 +1,4 @@
-import { choose } from "@/utils/data";
+import { choose } from "@/utils/data/data";
 import Image from "next/image";
 import React from "react";
 const Choose = () => {
@@ -18,7 +18,6 @@ const Choose = () => {
                 priority={true}
                 fill
                 className=" object-cover object-center group-hover:translate-x-5 transition-all duration-500"
-
               />
             </div>
             <h2 className="text-2xl text-black group-hover:text-textColor">

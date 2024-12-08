@@ -7,26 +7,23 @@ import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
-import { slider } from "@/utils/data";
+import { slider } from "@/utils/data/data";
 import Link from "next/link";
 
 export function Hero() {
   return (
     <Swiper
-    pagination={{
-      dynamicBullets:true,
-      clickable:true,
-    }}
+      pagination={{
+        dynamicBullets: true,
+        clickable: true,
+      }}
       navigation={true}
-      modules={[Navigation,Pagination]}
+      modules={[Navigation, Pagination]}
       className="mySwiper w-full h-[500px] md:h-[700px]" // Adjust height for different screen sizes
     >
       {slider.map((value, index) => {
         return (
-          <SwiperSlide
-            key={index}
-            className="w-full h-full  "
-          >
+          <SwiperSlide key={index} className="w-full h-full  ">
             <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 items-center gap-1 md:gap-2  lg:gap-8 px-4 md:px-8 lg:px-16">
               {/* Text Section */}
               <div className="text-center space-y-2 md:space-y-4 lg:space-y-8">
