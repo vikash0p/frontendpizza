@@ -1,4 +1,4 @@
-import { getAllData } from "@/utils/getAllData";
+import { getAllData } from "@/utils/fetch-data/getAllData";
 import React from "react";
 import { pizza } from "@/utils/types/pizzaInterface";
 import NewPizzaCard from "@/components/PizzaComponents/NewPizzaCard";

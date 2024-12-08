@@ -1,6 +1,6 @@
 import Choose from "@/components/Choose";
 import { Hero } from "@/components/Hero";
-import { getAllData } from "@/utils/getAllData";
+import { getAllData } from "@/utils/fetch-data/getAllData";
 import React from "react";
 import SwiperHome from "@/components/SwiperHome";
 import Heading from "@/components/Heading";
@@ -18,7 +18,6 @@ const HomeAllComponentData = async () => {
     (value) => value.category === "new lunched"
   );
 
-
   const headingData = {
     title: "Best Products",
     desc: "Lorem Ipsum Is Simply Dummy Text Of The Prinbeen The Industry's Standard Dummy Text Took Scrambled It To Make A Type Specimen Book.",
@@ -34,9 +33,9 @@ const HomeAllComponentData = async () => {
         <SwiperHome pizzaData={filterPizza} />
         <div>
           <h5 className="text-center text-2xl  py-5 font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
-             Taste Of Pizza @Every Single Bite
+            Taste Of Pizza @Every Single Bite
           </h5>
-        <FeaturesComponent />
+          <FeaturesComponent />
         </div>
         <ChooseUs />
         <Category pizzaData={pizzaData} />
