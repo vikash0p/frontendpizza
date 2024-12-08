@@ -8,13 +8,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { pizza } from "@/utils/types/pizzaInterface";
-import PizzaCardOne from "./PizzaCardOne";
+
 interface PizzaDataProps {
   pizzaData: pizza[] | undefined;
 }
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import PizzaCardOne from "../PizzaComponents/PizzaCardOne";
 
 export default function SwiperHome({ pizzaData }: PizzaDataProps) {
   return (

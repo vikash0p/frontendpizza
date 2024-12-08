@@ -5,12 +5,12 @@ import { BiSearch, BiUser } from "react-icons/bi";
 import { IoCartSharp } from "react-icons/io5";
 import { useAppSelector } from "@/Redux-toolkit/hooks";
 import Image from "next/image";
-import { SideBar } from "./SideBar";
 import { navLinks } from "@/utils/data/data";
 import { usePathname } from "next/navigation";
-import SearchPizza from "./PizzaComponents/SearchPizza";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Redux-toolkit/store";
+import { SideBar } from "../mobile-components/SideBar";
+import SearchPizza from "../PizzaComponents/SearchPizza";
 
 const Navbar = () => {
   const pathname = usePathname();

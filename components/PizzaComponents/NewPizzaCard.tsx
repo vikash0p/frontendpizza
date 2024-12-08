@@ -1,13 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { pizza } from "@/utils/types/pizzaInterface"; // ensure this is the correct path for the interface
+import { pizza } from "@/utils/types/pizzaInterface";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  clearAllFilters,
-  fetchAllProductData,
-} from "@/Redux-toolkit/slice/filterSlice";
+import { clearAllFilters, fetchAllProductData,} from "@/Redux-toolkit/slice/filterSlice";
 import type { RootState } from "@/Redux-toolkit/store";
-import PizzaData from "../PizzaData";
 import { PriceSlider } from "./PriceSlider";
 import { PizzaSelector } from "./PizzaSelector";
 import SearchPizza from "./SearchPizza";
@@ -16,6 +12,8 @@ import { FilterSideBar } from "./FilterSideBar";
 import Link from "next/link";
 import Image from "next/image";
 import ImageTopComponent from "../AboutComponents/ImageTopComponent";
+import PizzaData from "./PizzaData";
+
 interface PizzaCardProps {
   pizzaData: pizza[]; // Correctly type pizzaData as an array of pizza
 }

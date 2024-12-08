@@ -1,4 +1,4 @@
-import RegisterForm from '@/components/RegisterForm'
+import RegisterForm from '@/components/form-components/RegisterForm'
 import React from 'react'
 
 import { Metadata } from "next";

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { addToCart } from "@/Redux-toolkit/slice/cartSlice";
 import { useAppDispatch } from "@/Redux-toolkit/hooks";
 import { ToastSuccess } from "@/utils/utils-function/react-toastify";
-import ImageTopComponent from "./AboutComponents/ImageTopComponent";
+import ImageTopComponent from "../AboutComponents/ImageTopComponent";
 
 interface singleDataProps {
   data: pizza;

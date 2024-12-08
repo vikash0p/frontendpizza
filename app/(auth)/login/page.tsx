@@ -1,4 +1,4 @@
-import LoginForm from '@/components/LoginForm';
+import LoginForm from '@/components/form-components/LoginForm';
 import React from 'react'
 import { Metadata } from "next";
 import { loginMetadata } from "@/utils/meta/loginMetadata";

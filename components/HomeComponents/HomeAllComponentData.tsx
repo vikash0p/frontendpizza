@@ -1,15 +1,18 @@
-import Choose from "@/components/Choose";
-import { Hero } from "@/components/Hero";
-import { getAllData } from "@/utils/fetch-data/getAllData";
 import React from "react";
-import SwiperHome from "@/components/SwiperHome";
-import Heading from "@/components/Heading";
-import ChooseUs from "@/components/ChooseUs";
-import Category from "@/components/Category";
-import Continental from "@/components/Continental";
-import MenuItem from "@/components/MenuItem";
-import HappyCustomer from "@/components/HappyCustomer";
-import FeaturesComponent from "../AboutComponents/FeaturesComponent";
+
+import Choose from "./Choose";
+import { Hero } from "./Hero";
+import Heading from "./Heading";
+import ChooseUs from "./ChooseUs";
+import Category from "./Category";
+import Continental from "./Continental";
+import MenuItem from "./MenuItem";
+import HappyCustomer from "./HappyCustomer";
+import SwiperHome from "./SwiperHome";
+import FeaturesComponent from "./FeaturesComponent";
+import { getAllData } from "@/utils/fetch-data/getAllData";
+
+
 const HomeAllComponentData = async () => {
   const pizza = await getAllData();
   const pizzaData = pizza?.pizza;

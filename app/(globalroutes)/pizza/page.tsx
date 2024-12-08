@@ -1,12 +1,11 @@
-import { getAllData } from "@/utils/fetch-data/getAllData";
 import React from "react";
+import { Metadata } from "next";
 import { pizza } from "@/utils/types/pizzaInterface";
+import { getAllData } from "@/utils/fetch-data/getAllData";
+import { pizzaMetadata } from "@/utils/meta/pizzaMetadata";
 import NewPizzaCard from "@/components/PizzaComponents/NewPizzaCard";
 
-import { Metadata } from "next";
-import { pizzaMetadata } from "@/utils/meta/pizzaMetadata";
-
-export const metadata: Metadata =pizzaMetadata;
+export const metadata: Metadata = pizzaMetadata;
 
 const NewPizza = async () => {
   const data = await getAllData();

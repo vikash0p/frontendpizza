@@ -1,5 +1,5 @@
 // Import necessary components and utilities
-import SingleData from "@/components/SingleData";
+import SingleData from "@/components/PizzaComponents/SingleData";
 import axios from "axios";
 import { pizza } from "@/utils/types/pizzaInterface";
 import { Metadata } from "next";

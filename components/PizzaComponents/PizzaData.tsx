@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
-import PizzaCardOne from "./PizzaCardOne";
 import { pizza } from "@/utils/types/pizzaInterface";
+import PizzaCardOne from "./PizzaCardOne";
 
 interface pizzaDataProps {
   pizzaData: pizza[] | undefined;

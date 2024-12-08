@@ -1,8 +1,7 @@
 "use client";
 import { persistor, store } from "@/Redux-toolkit/store";
-import Footer from "@/components/Footer";
-import GoToTop from "@/components/GoToTop";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/GlobalComponents/Footer";
+import GoToTop from "@/components/GlobalComponents/GoToTop";
 import AuthProvider from "@/context/AuthProvider";
 import React from "react";
 import { Provider } from "react-redux";
@@ -11,6 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { PersistGate } from "redux-persist/integration/react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClientProvider ,QueryClient} from "@tanstack/react-query";
+import Navbar from "@/components/GlobalComponents/Navbar";
+
 interface layoutChildrenProps {
   children: React.ReactNode;
 }
