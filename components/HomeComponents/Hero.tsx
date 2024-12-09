@@ -38,7 +38,7 @@ export function Hero() {
               </div>
 
               {/* Text Section */}
-              <div className="text-center space-y-2 md:space-y-4 lg:space-y-8 lg:order-1 ">
+              <div className="text-center space-y-2 md:space-y-4  lg:order-1 ">
                 <h1 className="text-lg md:text-2xl lg:text-3xl text-black">
                   {value.tag}
                 </h1>
