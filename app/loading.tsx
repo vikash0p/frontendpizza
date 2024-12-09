@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 
 export default function Loading() {
   // Or a custom loading skeleton component
