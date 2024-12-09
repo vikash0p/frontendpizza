@@ -42,7 +42,7 @@ const SingleBlogCard: React.FC<BlogProps> = ({ id }) => {
           <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl md:text-4xl">
             {singleBlog.title}
           </h1>
-          <p className="text-gray-600 text-sm mt-2">{singleBlog.date}</p>
+          <p className="text-black text-sm mt-2">{singleBlog.date}</p>
           <p className="text-gray-500 capitalize mt-1 mb-4">
             Category: {singleBlog.category}
           </p>
@@ -53,7 +53,7 @@ const SingleBlogCard: React.FC<BlogProps> = ({ id }) => {
           </p>
 
           {/* Full Blog Paragraph */}
-          <p className="mt-4 text-gray-600 text-base sm:text-lg leading-relaxed">
+          <p className="mt-4 text-black text-base sm:text-lg leading-relaxed">
             {singleBlog.paragraph}
           </p>
 

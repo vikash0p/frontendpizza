@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { blogs } from "./BlogData";
 import Image from "next/image";
@@ -8,42 +8,43 @@ import Link from "next/link";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { useRouter } from "next/navigation";
 
-
 const BlogComponent: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-   const [filteredBlogs, setFilteredBlogs] = useState(blogs);
-  const router=useRouter();
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+  const router = useRouter();
 
   // Filter recent blogs for food, drink, pizza, restaurant categories
-//   const recentBlogs = blogs.filter((blog) => ["food", "drink", "pizza", "restaurant"].includes(blog.category));
+  //   const recentBlogs = blogs.filter((blog) => ["food", "drink", "pizza", "restaurant"].includes(blog.category));
 
-  const blogCategory=Array.from(new Set(blogs.map((value)=>value.category)));
+  const blogCategory = Array.from(
+    new Set(blogs.map((value) => value.category))
+  );
   // console.log("🚀 ~ file: BlogComponent.tsx:20 ~ blogCategory:", blogCategory);
 
   // Handle search functionality
- const handleSearch = (term: string) => {
-   const filtered = blogs.filter(
-     (blog) =>
-       blog.title.toLowerCase().includes(term.toLowerCase()) ||
-       blog.category.toLowerCase().includes(term.toLowerCase())
-   );
-   setFilteredBlogs(filtered);
- };
+  const handleSearch = (term: string) => {
+    const filtered = blogs.filter(
+      (blog) =>
+        blog.title.toLowerCase().includes(term.toLowerCase()) ||
+        blog.category.toLowerCase().includes(term.toLowerCase())
+    );
+    setFilteredBlogs(filtered);
+  };
 
- // Filter blogs by category when tag buttons are clicked
- const handleCategoryFilter = (category: string) => {
-   const filteredByCategory = blogs.filter(
-     (blog) => blog.category === category
-   );
+  // Filter blogs by category when tag buttons are clicked
+  const handleCategoryFilter = (category: string) => {
+    const filteredByCategory = blogs.filter(
+      (blog) => blog.category === category
+    );
 
-   // Scroll to top of the page after filtering
-   window.scrollTo({
-     top: 350, // Scroll to top of the page
-     behavior: "smooth", // Smooth scrolling
-   });
+    // Scroll to top of the page after filtering
+    window.scrollTo({
+      top: 350, // Scroll to top of the page
+      behavior: "smooth", // Smooth scrolling
+    });
 
-   setFilteredBlogs(filteredByCategory);
- };
+    setFilteredBlogs(filteredByCategory);
+  };
 
   return (
     <div className="container mx-auto  lg:p-6">
@@ -89,7 +90,7 @@ const BlogComponent: React.FC = () => {
                     <h2 className="text-xl font-bold">{blog.title}</h2>
 
                     <p className="text-gray-800 ">{blog.description}</p>
-                    <p className="text-gray-600 ">
+                    <p className="text-black ">
                       {blog.paragraph.slice(0, 80)}...
                     </p>
                     <p className="py-2 inline-block group">
@@ -172,8 +173,8 @@ const BlogComponent: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-sm font-bold">{blog.title}</h3>
-                        <p className="text-xs text-gray-600">{blog.date}</p>
-                        <p className="text-xs text-gray-600 capitalize">
+                        <p className="text-xs text-black">{blog.date}</p>
+                        <p className="text-xs text-black capitalize">
                           {blog.category}
                         </p>
                       </div>

@@ -73,7 +73,8 @@ const Footer = () => {
               type="email"
               className="w-full px-3 py-2 rounded-md border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
             />
-            <label className="flex items-center space-x-2">
+            <label className="flex items-center space-x-2 sr-only" >
+              New Seller
               <input
                 type="checkbox"
                 className="h-4 w-4 text-red-600 border-gray-300 accent-red-600 rounded focus:ring-red-500"

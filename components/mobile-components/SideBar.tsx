@@ -21,7 +21,11 @@ export function SideBar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button type="button" className="hover:text-red-500">
+        <button
+          type="button"
+          aria-label="Open menu"
+          className="hover:text-red-500"
+        >
           <FaBars size={25} />
         </button>
       </SheetTrigger>
@@ -29,7 +33,7 @@ export function SideBar() {
         <SheetHeader>
           <SheetTitle>
             <Image
-              src={"/logo.png"}
+              src={"/logo_300x300.png"}
               alt="logo image "
               width={500}
               height={250}

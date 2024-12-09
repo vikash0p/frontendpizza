@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 
 const FineCuisineComponent = () => {
@@ -33,7 +33,7 @@ const FineCuisineComponent = () => {
       {/* Section Title */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Exception Service</h1>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-black">
           Fine Cuisine Served With Love & Dedication
         </p>
         <p className="text-gray-500 mt-4 max-w-xl mx-auto">

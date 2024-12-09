@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
@@ -125,7 +125,7 @@ const AboutTeam = () => {
       {/* Section Title */}
       <div className="text-center">
         <h1 className="text-4xl font-bold">Hands Behind Tasty Foods</h1>
-        <p className="text-gray-600 mt-4">
+        <p className="text-black mt-4">
           Meet the talented team behind our culinary excellence.
         </p>
       </div>
@@ -149,7 +149,7 @@ const AboutTeam = () => {
             </div>
             <h3 className="text-2xl font-bold">{chef.name}</h3>
             <p className="text-sm text-textColor mt-1">{chef.title}</p>
-            <p className="mt-4 text-gray-600">{chef.description}</p>
+            <p className="mt-4 text-black">{chef.description}</p>
             <p className="mt-2 text-gray-500">Experience: {chef.experience}</p>
 
             {/* Social Media Links */}

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-
 
 const testimonials = [
   {
@@ -65,7 +64,7 @@ const Testimonials = () => {
     <div className="container mx-auto p-6">
       {/* Section Title */}
       <h2 className="text-4xl font-bold text-center ">Our Story</h2>
-      <h3 className="text-2xl font-medium text-center text-gray-600 mb-8">
+      <h3 className="text-2xl font-medium text-center text-black mb-8">
         Hear From Our Guest Experience
       </h3>
 

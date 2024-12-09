@@ -131,10 +131,13 @@ const Navbar = () => {
                 <Link
                   href="/cart"
                   className="text-lg font-semibold hover:text-gray-900 transition-colors duration-200 relative flex items-center"
-                  aria-label="Shopping Cart"
+                  aria-label={`Shopping Cart with ${pizza.length} items`}
                 >
                   <IoCartSharp size={26} className="text-black" />
-                  <span className="absolute -top-2 -right-3 w-5 h-5 bg-red-500 text-white flex items-center justify-center rounded-full text-xs">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -top-2 -right-3 w-5 h-5 bg-red-500 text-white flex items-center justify-center rounded-full text-xs"
+                  >
                     {pizza.length}
                   </span>
                 </Link>
