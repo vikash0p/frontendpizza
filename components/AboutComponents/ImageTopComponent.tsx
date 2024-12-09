@@ -4,7 +4,7 @@ import React from 'react'
 
 const ImageTopComponent = ({img,title,des}:{img:string,title:string,des:string}) => {
   return (
-    <div className="relative w-full h-80 bg-gray-200 flex items-center justify-center">
+    <div className="relative w-full h-52 bg-gray-200 flex items-center justify-center">
       <Image
         fill
         src={img}

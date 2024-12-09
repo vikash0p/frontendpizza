@@ -30,11 +30,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 hidden lg:block ">
             <Image
-              src={"/logo.png"}
+              src={"/logo_300x300.png"}
               alt="logo image "
               width={500}
               height={250}
-              className=" w-64 h-full mix-blend-darken "
+              className=" w-48 h-full mix-blend-darken "
               priority={true}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />

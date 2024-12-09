@@ -8,17 +8,16 @@ import {
 export const slider: sliderProps[] = [
   {
     id: 1,
-    name: "seafood pizza",
-    tag: "Buy #1 Get #2",
-    description: "This is the best pizza you will ever taste",
+    name: "Margherita Pizza",
+    tag: "Classic Delight",
+    description:"Experience the authentic taste of Italy with our Margherita pizza topped with fresh basil, mozzarella, and tomato sauce.",
     img: "/S1.png",
   },
   {
     id: 2,
-    name: "seafood pizza",
-    tag: "Buy #1 Get #2",
-
-    description: "This is the best pizza you will ever taste",
+    name: "BBQ Olive Pizza",
+    tag: "Savor the Flavor",
+    description: "Enjoy the perfect blend of smoky BBQ chicken, red onions, and melted cheese on a crispy crust.",
     img: "/slider-2.png",
   },
 ];

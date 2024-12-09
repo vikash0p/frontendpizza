@@ -12,11 +12,11 @@ const Footer = () => {
         <div className="space-y-4">
           <div className="flex-shrink-0 hidden lg:block ">
             <Image
-              src={"/logo.png"}
+              src={"/logo_300x300.png"}
               alt="logo image "
               width={500}
               height={250}
-              className=" w-64 h-full  "
+              className=" w-48 h-full  "
               priority={true}
               sizes="(min-width: 1280px) 256px, calc(2.73vw + 198px)"
             />

@@ -1,31 +1,29 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
+import dynamic from "next/dynamic";
 
-import Choose from "./Choose";
 import { Hero } from "./Hero";
-import Heading from "./Heading";
-import ChooseUs from "./ChooseUs";
-import Category from "./Category";
-import Continental from "./Continental";
-import MenuItem from "./MenuItem";
-import HappyCustomer from "./HappyCustomer";
-import SwiperHome from "./SwiperHome";
-import FeaturesComponent from "./FeaturesComponent";
 import { getAllData } from "@/utils/fetch-data/getAllData";
+import { headingData } from "@/utils/data/Heading-data";
 
+// Dynamically import components
+const Choose = dynamic(() => import("./Choose"));
+const Heading = dynamic(() => import("./Heading"));
+const SwiperHome = dynamic(() => import("./SwiperHome"));
+const FeaturesComponent = dynamic(() => import("./FeaturesComponent"));
+const ChooseUs = dynamic(() => import("./ChooseUs"));
+const Category = dynamic(() => import("./Category"));
+const Continental = dynamic(() => import("./Continental"));
+const MenuItem = dynamic(() => import("./MenuItem"));
+const HappyCustomer = dynamic(() => import("./HappyCustomer"));
 
-const HomeAllComponentData = async () => {
-  const pizza = await getAllData();
+const HomeAllComponentData = () => {
+  const pizza = use(getAllData());
   const pizzaData = pizza?.pizza;
 
   const filterPizza = pizzaData?.filter(
     (value) => value.category === "new lunched"
   );
-
-  const headingData = {
-    title: "Best Products",
-    desc: "Lorem Ipsum Is Simply Dummy Text Of The Prinbeen The Industry's Standard Dummy Text Took Scrambled It To Make A Type Specimen Book.",
-    textCss: "md:w-2/3 lg:w-1/2 m-auto text-slate-500 px-3 md:px-1 lg:px-0",
-  };
 
   return (
     <section>
