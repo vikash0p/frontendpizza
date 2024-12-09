@@ -1,21 +1,19 @@
 "use client";
 import React, { use } from "react";
-import dynamic from "next/dynamic";
 
 import { Hero } from "./Hero";
+import Choose from "./Choose";
+import Heading from "./Heading";
+import SwiperHome from "./SwiperHome";
+import FeaturesComponent from "./FeaturesComponent";
+import ChooseUs from "./ChooseUs";
+import Category from "./Category";
+import Continental from "./Continental";
+import MenuItem from "./MenuItem";
+import HappyCustomer from "./HappyCustomer";
+
 import { getAllData } from "@/utils/fetch-data/getAllData";
 import { headingData } from "@/utils/data/Heading-data";
-
-// Dynamically import components
-const Choose = dynamic(() => import("./Choose"));
-const Heading = dynamic(() => import("./Heading"));
-const SwiperHome = dynamic(() => import("./SwiperHome"));
-const FeaturesComponent = dynamic(() => import("./FeaturesComponent"));
-const ChooseUs = dynamic(() => import("./ChooseUs"));
-const Category = dynamic(() => import("./Category"));
-const Continental = dynamic(() => import("./Continental"));
-const MenuItem = dynamic(() => import("./MenuItem"));
-const HappyCustomer = dynamic(() => import("./HappyCustomer"));
 
 const HomeAllComponentData = () => {
   const pizza = use(getAllData());
@@ -33,7 +31,7 @@ const HomeAllComponentData = () => {
         <Heading data={headingData} />
         <SwiperHome pizzaData={filterPizza} />
         <div>
-          <h5 className="text-center text-2xl  py-5 font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
+          <h5 className="text-center text-2xl py-5 font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
             Taste Of Pizza @Every Single Bite
           </h5>
           <FeaturesComponent />
