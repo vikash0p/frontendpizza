@@ -53,7 +53,7 @@ export default function CustomerReview() {
               <h2 className="text-xl font-semibold text-textColor">
                 {value.name}{" "}
               </h2>
-              <p className="text-slate-500 px-1 md:px-5 lg:px-12">
+              <p className="text-black x-1 md:px-5 lg:px-12">
                 {value.desc}{" "}
               </p>
             </SwiperSlide>

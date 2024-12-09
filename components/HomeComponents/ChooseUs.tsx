@@ -43,7 +43,7 @@ const ChooseUs = () => {
                 </div>
                 <div className="">
                   <h2 className="text-2xl font-semibold">{value.name} </h2>
-                  <p className="text-slate-500">{value.desc} </p>
+                  <p className="text-black">{value.desc} </p>
                 </div>
               </div>
             );
