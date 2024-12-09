@@ -1,5 +1,4 @@
-"use client";
-import React, { use } from "react";
+
 
 import { Hero } from "./Hero";
 import Choose from "./Choose";
@@ -15,8 +14,8 @@ import HappyCustomer from "./HappyCustomer";
 import { getAllData } from "@/utils/fetch-data/getAllData";
 import { headingData } from "@/utils/data/Heading-data";
 
-const HomeAllComponentData = () => {
-  const pizza = use(getAllData());
+const HomeAllComponentData = async () => {
+  const pizza = await getAllData();
   const pizzaData = pizza?.pizza;
 
   const filterPizza = pizzaData?.filter(

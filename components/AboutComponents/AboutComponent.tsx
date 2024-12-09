@@ -16,8 +16,8 @@ const AboutComponent = () => {
         des="Home / About"
       />{" "}
       {/* Features */}
-      <div className="py-16">
-        <h5 className="text-center text-2xl md:text-5xl lg:text-8xl font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
+      <div className="my-10 " >
+        <h5 className=" my-10 text-center text-2xl md:text-5xl lg:text-7xl font-bold bg-gradient-to-r from-red-500 via-pink-500 to-red-700 text-transparent bg-clip-text">
           Great Taste Of Pizza @Every Single Bite Time To Explore Taste.
         </h5>
         <FeaturesComponent />
