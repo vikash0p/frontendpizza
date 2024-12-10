@@ -69,6 +69,7 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-xl font-bold">Newsletter</h2>
           <div className="flex flex-col space-y-3">
+            <label htmlFor="email"className="sr-only" > Email</label>
             <input
               type="email"
               className="w-full px-3 py-2 rounded-md border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
